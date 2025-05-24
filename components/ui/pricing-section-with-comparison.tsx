@@ -1,168 +1,212 @@
-import { Check, Minus, MoveRight, PhoneCall } from "lucide-react";
+import {
+  Check,
+  Anchor,
+  Ship,
+  Info,
+  Ruler,
+  Flag,
+  Scale,
+  Navigation,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 
 function Pricing() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const vessels = [
+    {
+      name: "MV ZARAAR HANIF",
+      image: "/assets/images/ship/image_23.jpeg",
+      details: {
+        IMO: "9454187",
+        EX_NAME: "NORD TRUST",
+        DWT: "55,693 MT ON 12.573 M DRAFT",
+        TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
+        YEAR_OF_BUILD: "2009 / MITSUI TAMANO, JAPAN.",
+        FLAG: "BANGLADESH/CHATTOGRAM/BV/S2BQ6",
+        DIMENSIONS:
+          "LOA / LBP: 189.990 / 182.0 M BEAM / DEPTH: 32.26 M / 17.90 M",
+        GRT_NRT: "31,232 / 18,516",
+        TPC: "55.8",
+      },
+    },
+    {
+      name: "MV RUBAIYAT HANIF",
+      image: "/assets/images/ship/image_33.jpeg",
+      details: {
+        IMO: "9403047",
+        EX_NAME: "NEW VICTORY",
+        DWT: "58,713 MT ON 12.828M SSW",
+        TYPE_OF_VESSEL: "",
+        YEAR_OF_BUILD: "SDBC / 2008",
+        FLAG: "BANGLADESH/NA/BV/S2BZ8",
+        DIMENSIONS: "LOA / BEAM / TPC: 189.99 M / 32.26M / 57.54 MT",
+        GRT_NRT: "32,379/19,353",
+        TPC: "57.54",
+      },
+    },
+    {
+      name: "MV GUL BANO",
+      image: "/assets/images/ship/image_20.jpeg",
+      details: {
+        IMO: "9425899",
+        EX_NAME: "ROYAL SAMURAI",
+        DWT: "58,091 MT ON 12.826 M DRAFT",
+        TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
+        YEAR_OF_BUILD: "2010 / TSUNEISHI HEAVY INDUSTRIES, PHILIPPINES.",
+        FLAG: "BANGLADESH/CHATTOGRAM/BV/S2CU5",
+        DIMENSIONS:
+          "LOA / LBP: 189.990 / 185.6 M BEAM / DEPTH: 32.26 M / 18.00 M",
+        GRT_NRT: "32,351 / 19,458",
+        TPC: "57.46",
+      },
+    },
+  ];
+
+  const specs = [
+    { name: "IMO", icon: <Info className="w-5 h-5" /> },
+    { name: "EX NAME", icon: <Ship className="w-5 h-5" /> },
+    { name: "DWT", icon: <Scale className="w-5 h-5" /> },
+    { name: "TYPE OF VESSEL", icon: <Ship className="w-5 h-5" /> },
+    { name: "YEAR_OF_BUILD", icon: <Anchor className="w-5 h-5" /> },
+    {
+      name: "FLAG",
+      icon: <Flag className="w-5 h-5" />,
+    },
+    { name: "DIMENSIONS", icon: <Ruler className="w-5 h-5" /> },
+    { name: "GRT/NRT", icon: <Navigation className="w-5 h-5" /> },
+    { name: "TPC", icon: <Scale className="w-5 h-5" /> },
+  ];
+
   return (
-    <div className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
-        <div className="flex text-center justify-center items-center gap-4 flex-col">
-          <Badge>Our Fleets</Badge>
-          {/* <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
-              
-            </h2>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
-              Managing a small business today is already tough.
-            </p>
-          </div> */}
-          <div className="grid text-left w-full grid-cols-3 lg:grid-cols-4 divide-x pt-20">
-            <div className="col-span-3 lg:col-span-1"></div>
-            <div className="px-3 py-1 md:px-6 md:py-4  gap-2 flex flex-col">
-              <p className="text-2xl">MV ZARAAR HANIF</p>
-              {/* <Image
-                width={300}
-                height={300}
-                src="/assets/images/ship/image_23.jpeg"
-                alt="image"
-                className="background-item w-100"
-              /> */}
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
-              <p className="text-2xl">MV RUBAIYAT HANIF</p>
-              {/* <Image
-                width={300}
-                height={300}
-                src="/assets/images/ship/image_33.jpeg"
-                alt="image"
-                className="background-item w-100"
-              /> */}
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
-              <p className="text-2xl">MV GUL BANO</p>
-              {/* <Image
-                width={300}
-                height={300}
-                src="/assets/images/ship/image_20.jpeg"
-                alt="image"
-                className="background-item w-100"
-              /> */}
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1  py-4">
-              {/* <b>Features</b> */}
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              IMO
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              9454187
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              9403047
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              9425899
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              EX NAME
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              NORD TRUST
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              NEW VICTORY
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              ROYAL SAMURAI
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              DWT
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              55,693 MT ON 12.573 M DRAFT
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              58,713 MT ON 12.828M SSW
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              58,091 MT ON 12.826 M DRAFT
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              TYPE OF VESSEL
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              SINGLE DECK GEARED BULK CARRIER
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              {/* <p className="text-muted-foreground text-sm">25 members</p> */}
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              SINGLE DECK GEARED BULK CARRIER
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              YEAR OF BUILD/SHIPYARD
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              2009 / MITSUI TAMANO, JAPAN.
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              SDBC / 2008
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              2010 / TSUNEISHI HEAVY INDUSTRIES, PHILIPPINES.
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              FLAG/REGISTRY/CLASS/CALLSIGN
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              BANGLADESH/CHATTOGRAM/BV/S2BQ6
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              BANGLADESH/NA/BV/S2BZ8
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              BANGLADESH/CHATTOGRAM/BV/S2CU5
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              LOA/LBP/ BEAM/DEPTH
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              LOA / LBP: 189.990 / 182.0 M BEAM / DEPTH: 32.26 M / 17.90 M
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              LOA / BEAM / TPC: 189.99 M / 32.26M / 57.54 MT
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              LOA / LBP: 189.990 / 185.6 M BEAM / DEPTH: 32.26 M / 18.00 M
-            </div>
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              GRT/NRT
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              31,232 / 18,516
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              32,379/19,353
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              32,351 / 19,458
+    <div className="w-full py-12 md:py-16 bg-gray-50">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex text-center justify-center items-center gap-2 flex-col mb-6 md:mb-8">
+          <Badge className="px-3 py-1 text-sm md:text-base bg-blue-600 hover:bg-blue-700">
+            Our Fleet
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 max-w-2xl">
+            Explore Our Modern Vessel Fleet
+          </h2>
+          <p className="text-sm md:text-base text-gray-600 max-w-2xl">
+            Our fleet combines cutting-edge technology with superior
+            craftsmanship for safe and efficient global transportation.
+          </p>
+        </div>
+
+        {/* Vessel Selection Tabs - More compact and mobile-friendly */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8">
+          {vessels.map((vessel, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm transition-all duration-300 flex items-center gap-1 ${
+                activeTab === index
+                  ? "bg-blue-600 text-white"
+                  : "bg-white hover:bg-gray-100 text-gray-800"
+              }`}
+            >
+              <Ship
+                className={`w-4 h-4 ${
+                  activeTab === index ? "text-white" : "text-blue-600"
+                }`}
+              />
+              <span className="font-medium">
+                {vessel.name.replace("MV ", "")}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Main Content - More compact with smaller gaps */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
+          {/* Vessel Image - Optimized for mobile */}
+          <div className="lg:col-span-5 rounded-lg overflow-hidden shadow bg-white p-2 md:p-3">
+            <div className="relative h-[200px] sm:h-[250px] md:h-[300px] rounded overflow-hidden shadow-inner">
+              <Image
+                src={vessels[activeTab].image}
+                alt={vessels[activeTab].name}
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 md:p-4">
+                <h3 className="text-white text-lg md:text-xl font-bold">
+                  {vessels[activeTab].name}
+                </h3>
+                <p className="text-white/80 text-sm">Supramax Bulk Carrier</p>
+              </div>
             </div>
 
-            <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
-              TPC
+            <div className="grid grid-cols-3 gap-2 mt-3">
+              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
+                <p className="text-xs md:text-sm text-blue-600 font-medium">
+                  DWT
+                </p>
+                <p className="text-sm md:text-base font-bold">
+                  {vessels[activeTab].details.DWT.split(" ")[0]}
+                </p>
+              </div>
+              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
+                <p className="text-xs md:text-sm text-blue-600 font-medium">
+                  Built
+                </p>
+                <p className="text-sm md:text-base font-bold">
+                  {vessels[activeTab].details.YEAR_OF_BUILD.split(" ")[0]}
+                </p>
+              </div>
+              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
+                <p className="text-xs md:text-sm text-blue-600 font-medium">
+                  IMO
+                </p>
+                <p className="text-sm md:text-base font-bold">
+                  {vessels[activeTab].details.IMO}
+                </p>
+              </div>
             </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              55.8
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              57.54
-            </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 flex justify-center text-sm font-semibold">
-              57.46
+          </div>
+
+          {/* Vessel Specifications - More compact for all screens */}
+          <div className="lg:col-span-7">
+            <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="bg-blue-600 text-white p-3">
+                <h3 className="text-base md:text-lg font-bold">
+                  Vessel Specifications
+                </h3>
+                <p className="text-blue-100 text-xs md:text-sm">
+                  Detailed technical information
+                </p>
+              </div>
+
+              <div className="divide-y divide-gray-100">
+                {specs.map((spec, index) => (
+                  <div
+                    key={index}
+                    className="p-2 md:p-3 hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <div className="flex items-start gap-2">
+                      <div className="p-1.5 bg-blue-50 rounded-full text-blue-600 hidden sm:block">
+                        {spec.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs md:text-sm font-medium text-gray-500">
+                          {spec.name}
+                        </h4>
+                        <p
+                          className="text-sm md:text-base font-semibold text-gray-800 break-words"
+                          style={{ marginBottom: "0px" }}
+                        >
+                          {vessels[activeTab].details[
+                            spec.name.replace(/\/| /g, "_")
+                          ] || "-"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
