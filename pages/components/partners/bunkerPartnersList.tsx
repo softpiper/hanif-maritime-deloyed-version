@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BunkerPartnersList() {
   const { ref, inView } = useInView({
@@ -9,12 +10,36 @@ export default function BunkerPartnersList() {
   });
 
   const partners = [
-    "DAN BUNKERING",
-    "BMS UNITED",
-    "KPI BRIDGE OIL",
-    "WORLD FUEL SERVICES PVT. LTD",
-    "GLANDER BUNKERING",
-    "Chimbusco International Petroleum (Singapore) Pte.Ltd.",
+    {
+      title: "DAN BUNKERING",
+      logoUrl: "/assets/images/partners/dan-bunkering.png",
+      siteUrl: "https://www.dan-bunkering.com/",
+    },
+    {
+      title: "BMS UNITED",
+      logoUrl: "/assets/images/partners/bms-united2.jpg",
+      siteUrl: "https://www.commarts.com/webpicks/bms-united",
+    },
+    {
+      title: "KPI BRIDGE OIL",
+      logoUrl: "/assets/images/partners/kpi-oil.png",
+      siteUrl: "https://kpioceanconnect.com/",
+    },
+    {
+      title: "WORLD FUEL SERVICES PVT. LTD",
+      logoUrl: "/assets/images/partners/wkcorp-logo.png",
+      siteUrl: "https://www.world-kinect.com/world-fuel",
+    },
+    {
+      title: "GLANDER BUNKERING",
+      logoUrl: "/assets/images/partners/glander.png",
+      siteUrl: "https://gibunkering.com/",
+    },
+    {
+      title: "Chimbusco International Petroleum (Singapore) Pte.Ltd.",
+      logoUrl: "/assets/images/partners/Chimbusco.png",
+      siteUrl: "https://mobi.chimbusco.com/Overseas/Singapore/index.html",
+    },
   ];
 
   return (
@@ -23,19 +48,21 @@ export default function BunkerPartnersList() {
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700/30 backdrop-blur-sm"
+      className=" p-4 rounded-xl shadow-xl border border-slate-700/30 backdrop-blur-sm"
     >
       <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 mb-6">
         Bunker Partners
       </h3>
 
-      <div className="grid">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {partners.map((partner, index) => (
           <Partner
             key={index}
-            title={partner}
-            delay={index * 0.1}
+            title={partner.title}
+            delay={index * 0.05}
             inView={inView}
+            logoUrl={partner.logoUrl}
+            siteUrl={partner.siteUrl}
           />
         ))}
       </div>
@@ -47,40 +74,44 @@ const Partner = ({
   title,
   delay,
   inView,
+  logoUrl,
+  siteUrl,
 }: {
   title: string;
   delay: number;
   inView: boolean;
+  logoUrl?: string;
+  siteUrl?: string;
 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.4, delay }}
-      className="flex items-center gap-3 rounded-lg hover:bg-slate-700/30 transition-colors"
+      className="flex items-center gap-3 rounded-lg hover:bg-gray-200 transition-colors"
     >
-      <div className="rounded-full bg-blue-500/20 p-2 flex items-center justify-center">
-        <CheckIcon />
-      </div>
-      <p className="text-slate-100 font-medium">{title}</p>
+      <Link
+        href={siteUrl || "/partners"}
+        className="flex items-center gap-3 p-4"
+        target="_blank"
+      >
+        <Logo logoUrl={logoUrl} />
+        <span className="text-lg font-semibold text-gray-800 no-underline">
+          {title}
+        </span>
+      </Link>
     </motion.div>
   );
 };
 
-const CheckIcon = () => {
+const Logo = ({ logoUrl }: { logoUrl?: string }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      className="text-blue-400"
-    >
-      <path fill="none" d="M0 0h24v24H0z" />
-      <path
-        fill="currentColor"
-        d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-      />
-    </svg>
+    <Image
+      src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
+      alt="Company Logo"
+      width={150}
+      height={150}
+      className="object-contain"
+    />
   );
 };

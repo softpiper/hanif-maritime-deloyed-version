@@ -84,48 +84,48 @@ export default function CharteringPartnersList() {
     },
     {
       title: "CAMBRIAN BULK LIMITED",
-      logoUrl: "/public/assets/images/partners/cambrian.png",
+      logoUrl: "/assets/images/partners/cambrian.png",
       siteUrl: "https://www.cambrian.com/",
-    },
+    }, //not found
     {
       title: "LOCH SHIPPING INTERMEDIARY FZE, U.A.E",
-      logoUrl: "/public/assets/images/partners/loch.png",
+      logoUrl: "/assets/images/partners/loch.png",
       siteUrl: "https://www.lochshipping.com/",
-    },
+    }, // not found
     {
       title: "ALLIANZ BULK CFR8 PTE. LTD.",
-      logoUrl: "/public/assets/images/partners/allianz.png",
-      siteUrl: "https://www.allianz.com/",
+      logoUrl: "/assets/images/partners/Allianz-Bulk-CFR8-2x.png",
+      siteUrl: "https://www.allianzwithus.com/",
     },
     {
       title: "TEAM BULK CARRIERS PTE LTD , SINGAPORE",
-      logoUrl: "/assets/images/partners/team.png",
-      siteUrl: "https://www.team.com/",
+      logoUrl: "/assets/images/partners/team-bulk-carriers.png",
+      siteUrl: "https://www.teambulkcarriers.com/",
     },
     {
       title: "BAINBRIDGE NAVIGATION DMCC",
       logoUrl: "/assets/images/partners/bainbridge.png",
-      siteUrl: "https://www.bainbridge.com/",
+      siteUrl: "https://bainbridgenav.com/",
     },
     {
       title: "M/S. JAHAZ SHIPPING LINES DMCC",
       logoUrl: "/assets/images/partners/jahaz.png",
-      siteUrl: "https://www.jahaz.com/",
+      siteUrl: "https://jahazshipping.com/",
     },
     {
       title: "BULK ASIA PTE LTD",
-      logoUrl: "/assets/images/partners/bulkasia.png",
-      siteUrl: "https://www.bulkasia.com/",
+      logoUrl: "/assets/images/partners/bulk-asia.png",
+      siteUrl: "https://www.keralapdf.xyz/",
     },
     {
       title: "WEALTH CREATION GENERAL TRADING LLC",
       logoUrl: "/assets/images/partners/wealth.png",
       siteUrl: "https://www.wealthcreation.com/",
-    },
+    }, // not found
     {
       title: "EVER GLORY SHIP CHARTER LLC",
-      logoUrl: "/assets/images/partners/everglory.png",
-      siteUrl: "https://www.everglory.com/",
+      logoUrl: "/assets/images/partners/EVERHLORY-LOGO-WHITE-LOGO.png",
+      siteUrl: "https://old.everglory.ae/",
     },
   ];
 
