@@ -1,7 +1,6 @@
 import React from "react";
 import Wrapper from "./components/layout/Wrapper";
 import Image from "next/image";
-import Hero2 from "./components/hero2";
 
 const Gallery = () => {
   return (
@@ -39,46 +38,50 @@ const Gallery = () => {
 
       <section className="casestudies-section py-60">
         <div className="container">
+          <h2 className="text-blue font-bold">RUBAIYAT HANIF</h2>
+
           <div className="row">
             {[
-              // "image_1.jpeg",
-              // "image_2.jpeg",
-              // "image_3.jpeg",
-              // "image_4.jpeg",
-              // "image_5.jpeg",
-              // "image_6.jpeg",
-              // "image_7.jpeg",
-              // "image_8.jpeg",
-              // "image_10.jpeg",
-              // "image_12.jpeg",
-              // "image_11.jpeg",
-              // "image_13.jpeg",
-              "image_18.jpeg",
-              "image_19.jpeg",
-              "image_20.jpeg",
-              "image_15.jpeg",
-              "image_16.jpeg",
-              "image_22.jpeg",
-              "image_17.jpeg",
-              "image_14.jpeg",
-              "image_21.jpeg",
-
-              // "image_23.jpeg",
-              // "image_24.jpeg",
-              // "image_25.jpeg",
-              // "image_26.jpeg",
-              // "image_27.jpeg",
-              // "image_28.jpeg",
-              // "image_29.jpeg",
-              // "image_30.jpeg",
-              // "image_31.jpeg",
-              // "image_32.jpeg",
-              // "image_33.jpeg",
               "image_41.jpg",
               "image_42.jpg",
               "image_43.jpg",
               "image_44.jpg",
               "image_45.jpg",
+            ].map((image, index) => (
+              <div className="col-lg-4 content-center" key={index}>
+                <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
+                  <Image
+                    src={`/assets/images/ship/${image}`}
+                    alt={`ship ${index + 1}`}
+                    className="background-item w-100 h-100"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="casestudies-section py-60">
+        <div className="container">
+          <h2 className="text-blue font-bold">ZARAAR HANIF</h2>
+          <div className="row">
+            {[
+              "image_51.jpg",
+              "image_52.jpg",
+              "image_53.jpg",
+              "image_54.jpg",
+              "image_55.jpg",
+              "image_56.jpg",
+              "image_57.jpg",
+              "image_58.jpg",
+              "image_59.jpg",
+              "image_60.jpg",
+              "image_61.jpg",
+              "image_62.jpg",
+              "image_63.jpg",
             ].map((image, index) => (
               <div className="col-lg-4 content-center" key={index}>
                 <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
