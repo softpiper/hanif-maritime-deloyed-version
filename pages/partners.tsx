@@ -84,25 +84,23 @@ const Partners = () => {
         }}
       >
         <div className="container py-4">
-          <div className="row g-4">
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100 rounded-3 overflow-hidden">
-                {/* <div className="card-header bg-primary bg-opacity-10 py-3">
+          <div className="col-lg-12">
+            <div className="card border-0 shadow-sm h-100 rounded-3 overflow-hidden">
+              {/* <div className="card-header bg-primary bg-opacity-10 py-3">
                   <h4 className="mb-0 text-primary">Official Partners</h4>
                 </div> */}
-                <div className="card-body">
-                  <OfficialPartnersList />
-                </div>
+              <div className="card-body">
+                <OfficialPartnersList />
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100 rounded-3 overflow-hidden">
-                {/* <div className="card-header bg-info bg-opacity-10 py-3">
+          </div>
+          <div className="col-lg-12">
+            <div className="card border-0 shadow-sm h-100 rounded-3 overflow-hidden">
+              {/* <div className="card-header bg-info bg-opacity-10 py-3">
                   <h4 className="mb-0 text-info">Bunker Partners</h4>
                 </div> */}
-                <div className="card-body">
-                  <BunkerPartnersList />
-                </div>
+              <div className="card-body">
+                <BunkerPartnersList />
               </div>
             </div>
           </div>

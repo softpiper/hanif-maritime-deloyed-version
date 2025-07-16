@@ -84,12 +84,12 @@ export default function CharteringPartnersList() {
     },
     {
       title: "CAMBRIAN BULK LIMITED",
-      logoUrl: "/assets/images/partners/cambrian.png",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
       siteUrl: "https://www.cambrian.com/",
     }, //not found
     {
       title: "LOCH SHIPPING INTERMEDIARY FZE, U.A.E",
-      logoUrl: "/assets/images/partners/loch.png",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
       siteUrl: "https://www.lochshipping.com/",
     }, // not found
     {
@@ -119,7 +119,7 @@ export default function CharteringPartnersList() {
     },
     {
       title: "WEALTH CREATION GENERAL TRADING LLC",
-      logoUrl: "/assets/images/partners/wealth.png",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
       siteUrl: "https://www.wealthcreation.com/",
     }, // not found
     {
@@ -193,12 +193,14 @@ const Partner = ({
 
 const Logo = ({ logoUrl }: { logoUrl?: string }) => {
   return (
-    <Image
-      src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
-      alt="Company Logo"
-      width={150}
-      height={150}
-      className="object-contain"
-    />
+    <div className="bg-gray-400 p-1">
+      <Image
+        src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
+        alt="Company Logo"
+        width={150}
+        height={150}
+        className="object-contain"
+      />
+    </div>
   );
 };

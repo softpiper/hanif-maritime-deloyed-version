@@ -106,12 +106,14 @@ const Partner = ({
 
 const Logo = ({ logoUrl }: { logoUrl?: string }) => {
   return (
-    <Image
-      src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
-      alt="Company Logo"
-      width={150}
-      height={150}
-      className="object-contain"
-    />
+    <div className="bg-gray-400 p-1">
+      <Image
+        src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
+        alt="Company Logo"
+        width={150}
+        height={150}
+        className="object-contain"
+      />
+    </div>
   );
 };
