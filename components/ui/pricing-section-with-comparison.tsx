@@ -16,10 +16,27 @@ import { useState } from "react";
 function Pricing() {
   const [activeTab, setActiveTab] = useState(0);
 
-  const vessels = [
+  type VesselDetailKey =
+    | "IMO"
+    | "EX_NAME"
+    | "DWT"
+    | "TYPE_OF_VESSEL"
+    | "YEAR_OF_BUILD"
+    | "FLAG"
+    | "DIMENSIONS"
+    | "GRT_NRT"
+    | "TPC";
+
+  type VesselDetails = Record<VesselDetailKey, string>;
+
+  const vessels: {
+    name: string;
+    image: string;
+    details: VesselDetails;
+  }[] = [
     {
       name: "MV ZARAAR HANIF",
-      image: "/assets/images/ship/image_23.jpeg",
+      image: "/assets/images/ship/image_41.jpg",
       details: {
         IMO: "9454187",
         EX_NAME: "NORD TRUST",
@@ -35,7 +52,7 @@ function Pricing() {
     },
     {
       name: "MV RUBAIYAT HANIF",
-      image: "/assets/images/ship/image_33.jpeg",
+      image: "/assets/images/ship/image_51.jpg",
       details: {
         IMO: "9403047",
         EX_NAME: "NEW VICTORY",
@@ -136,7 +153,7 @@ function Pricing() {
                 <h3 className="text-white text-lg md:text-xl font-bold">
                   {vessels[activeTab].name}
                 </h3>
-                <p className="text-white/80 text-sm">Supramax Bulk Carrier</p>
+                {/* <p className="text-white/80 text-sm">Supramax Bulk Carrier</p> */}
               </div>
             </div>
 
@@ -181,9 +198,9 @@ function Pricing() {
               </div>
 
               <div className="divide-y divide-gray-100">
-                {specs.map((spec, index) => (
+                {specs.map((spec, idx) => (
                   <div
-                    key={index}
+                    key={idx}
                     className="p-2 md:p-3 hover:bg-gray-50 transition-colors duration-200"
                   >
                     <div className="flex items-start gap-2">
@@ -199,7 +216,7 @@ function Pricing() {
                           style={{ marginBottom: "0px" }}
                         >
                           {vessels[activeTab].details[
-                            spec.name.replace(/\/| /g, "_")
+                            spec.name.replace(/\/| /g, "_") as VesselDetailKey
                           ] || "-"}
                         </p>
                       </div>

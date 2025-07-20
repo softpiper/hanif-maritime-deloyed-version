@@ -98,6 +98,37 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      <section className="casestudies-section py-60">
+        <div className="container">
+          <h2 className="text-blue font-bold">GUL BANO</h2>
+          <div className="row">
+            {[
+              "image_14.jpeg",
+              "image_17.jpeg",
+              "image_21.jpeg",
+              "image_18.jpeg",
+              "image_19.jpeg",
+              "image_20.jpeg",
+              "image_15.jpeg",
+              "image_22.jpeg",
+              "image_16.jpeg",
+            ].map((image, index) => (
+              <div className="col-lg-4 content-center" key={index}>
+                <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
+                  <Image
+                    src={`/assets/images/ship/${image}`}
+                    alt={`ship ${index + 1}`}
+                    className="background-item w-100 h-100"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Wrapper>
   );
 };

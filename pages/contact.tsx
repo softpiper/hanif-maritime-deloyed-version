@@ -173,7 +173,7 @@ const contact = () => {
                         <div>
                           <iframe
                             className="w-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7943903734554!2d90.40397217439293!3d23.790334987243803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70c68f9e849%3A0xe9c9866d61e42c32!2sAnz%20Huq%20Eleven%20Square!5e0!3m2!1sen!2sbd!4v1724608243383!5m2!1sen!2sbd"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.3152553771094!2d90.41779544652215!3d23.71011964834106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ac11781ed3%3A0xce5f90a9f0ea3bea!2sHanif%20Spinning%20Mills%20Limited!5e0!3m2!1sen!2sbd!4v1753003817806!5m2!1sen!2sbd"
                             height="350"
                             style={{ border: 0 }}
                             allowFullScreen={true}
