@@ -7,10 +7,10 @@ import Link from "next/link";
 
 export default function MapSection() {
   return (
-    <div className="py-40 dark:bg-black bg-white w-full">
+    <div className="py-10 md:py-40 dark:bg-black bg-white w-full">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
         <div className="text-center md:w-1/2 md:pr-8">
-          <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
+          <p className="font-bold text-2xl md:text-4xl dark:text-white text-black">
             Wanna Rent a{" "}
             <span className="text-neutral-400">
               {"Fleet".split("").map((word, idx) => (
@@ -26,7 +26,7 @@ export default function MapSection() {
               ))}
             </span>
           </p>
-          <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
+          <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4 font-mono w-11/12">
             Managing a shipping business is challenging. Simplify your
             operations by renting a fleet from us. Our goal is to provide you
             with reliable and efficient shipping solutions, making your business

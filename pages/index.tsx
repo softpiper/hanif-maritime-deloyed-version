@@ -15,15 +15,13 @@ export default function Home() {
       <section className="pb-5 mb-20 bg-gradient-to-r from-green-100 to-blue-100">
         <div className="flex flex-wrap">
           <div className="w-full md:w-7/12 flex items-center justify-center">
-            <div className="text-center">
+            <div className="text-center w-11/12 md:w-8/12 py-3">
               <h3 className="text-uppercase font-bold leading-loose tracking-widest">
                 Hanif Maritime Limited
               </h3>
-              <p>
+              <p className="text-sm font-mono md:text-xl">
                 HANIF MARITIME LIMITED (HML) was established on 07th September
-                <br />
                 2021 as a sister concern of HANIF GROUP, specializing in the
-                <br />
                 transportation of dry bulk cargoes with International business
                 standards.
               </p>
@@ -48,7 +46,7 @@ export default function Home() {
       </section>
       <section className="service-section pb-60">
         <div className="container">
-          <div className="row gx-5 gy-30">
+          <div className="row gy-30">
             <div className="col-lg-12">
               <h3 className="text-uppercase fw-bold lh-lg text-center letter-spacing-lg pb-60">
                 Services

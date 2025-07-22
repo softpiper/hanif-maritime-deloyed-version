@@ -34,14 +34,14 @@ const Header = () => {
             <Image
               className="logo-dark"
               src="/assets/images/logo.png"
-              width={400}
+              width={300}
               height={50}
               alt="Hanif Maritime Limited"
             />
             <Image
               className="logo-light"
               src="/assets/images/logo.png"
-              width={400}
+              width={300}
               height={50}
               alt="Hanif Maritime Limited"
             />

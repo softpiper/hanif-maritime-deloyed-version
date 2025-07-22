@@ -369,7 +369,7 @@ const CompanyPage = () => {
             <h2 className="text-underline-sm pb-3 mb-3">
               <span className="text-primary pe-2">Future</span> Plans
             </h2>
-            <p className="text-muted">
+            <p className="text-muted dark:text-white">
               Hanif Maritime Ltd aims to expand its fleet with next-generation
               eco-friendly vessels and explore new markets to enhance our
               service offerings. We are committed to leveraging technological
