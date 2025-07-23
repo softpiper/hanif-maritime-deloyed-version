@@ -12,7 +12,7 @@ const navItems = [
   { path: "/partners", label: "Partners" },
   { path: "/gallery", label: "Gallery" },
   { path: "/other-business", label: "Other Business" },
-  { path: "/https://hanif-group.com:2096/", label: "Webmail" },
+  { path: "https://hanif-group.com:2096", label: "Webmail" },
   { path: "/contact", label: "Contact" },
 ];
 const Header = () => {
