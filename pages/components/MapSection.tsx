@@ -13,7 +13,7 @@ export default function MapSection() {
           <p className="font-bold text-2xl md:text-4xl dark:text-white text-black">
             Wanna Rent a{" "}
             <span className="text-neutral-400">
-              {"Fleet".split("").map((word, idx) => (
+              {"Vessel".split("").map((word, idx) => (
                 <motion.span
                   key={idx}
                   className="inline-block"
@@ -28,7 +28,7 @@ export default function MapSection() {
           </p>
           <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4 font-mono w-11/12">
             Managing a shipping business is challenging. Simplify your
-            operations by renting a fleet from us. Our goal is to provide you
+            operations by renting a vessel from us. Our goal is to provide you
             with reliable and efficient shipping solutions, making your business
             smoother and more profitable.
           </p>

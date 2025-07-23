@@ -122,10 +122,7 @@ const index = () => {
                           Crew Management
                         </p>
                       </div>
-                      <div className="ps-3 position-relative">
-                        <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Alumina</p>
-                      </div>
+
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
                         <p className="heading-font fw-bold small">
@@ -176,7 +173,7 @@ const index = () => {
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
                         <p className="heading-font fw-bold small">
-                          Bareboat Charter: Proving vessel for long term charter
+                          Bareboat Charter: Proving vessel for time bad charter
                         </p>
                       </div>
                       <div className="ps-3 position-relative">
