@@ -26,9 +26,13 @@ const Gallery = () => {
 
       <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="font-bold" style={{ color: "#1E2026" }}>
-            RUBAIYAT HANIF
-          </h2>
+          <div
+            className="ds-section-head"
+            style={{ textAlign: "left", marginLeft: 0 }}
+          >
+            <p className="ds-section-kicker">Fleet Gallery</p>
+            <h2 className="ds-section-title">RUBAIYAT HANIF</h2>
+          </div>
 
           <div className="row">
             {[
@@ -56,9 +60,13 @@ const Gallery = () => {
 
       <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="font-bold" style={{ color: "#1E2026" }}>
-            ZARAAR HANIF
-          </h2>
+          <div
+            className="ds-section-head"
+            style={{ textAlign: "left", marginLeft: 0 }}
+          >
+            <p className="ds-section-kicker">Fleet Gallery</p>
+            <h2 className="ds-section-title">ZARAAR HANIF</h2>
+          </div>
           <div className="row">
             {[
               "image_51.jpg",
@@ -93,9 +101,13 @@ const Gallery = () => {
 
       <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="font-bold" style={{ color: "#1E2026" }}>
-            GUL BANO
-          </h2>
+          <div
+            className="ds-section-head"
+            style={{ textAlign: "left", marginLeft: 0 }}
+          >
+            <p className="ds-section-kicker">Fleet Gallery</p>
+            <h2 className="ds-section-title">GUL BANO</h2>
+          </div>
           <div className="row">
             {[
               "image_14.jpeg",

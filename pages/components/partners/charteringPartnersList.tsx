@@ -135,7 +135,7 @@ export default function CharteringPartnersList() {
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="p-4 ds-card"
+      className="ds-panel"
     >
       <h3 className="text-2xl font-bold mb-6" style={{ color: "#1E2026" }}>
         Chartering Partners

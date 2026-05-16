@@ -21,10 +21,14 @@ const index = () => {
         </div>
       </section>
 
-      <section className="service-section py-60 ds-section-light">
+      <section className="service-section ds-section ds-section-light">
         <div className="container">
           <div className="row gx-5 gy-30">
             <div className="col-lg-12">
+              <div className="ds-section-head">
+                <p className="ds-section-kicker">What We Do</p>
+                <h2 className="ds-section-title">Service Lines</h2>
+              </div>
               <div className="row gy-5">
                 <div className="col-lg-3">
                   <div className="card single-team-member h-100 ds-card">

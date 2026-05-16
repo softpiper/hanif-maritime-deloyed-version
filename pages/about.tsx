@@ -15,16 +15,56 @@ const index = () => {
         </div>
       </section>
 
-      <section className="py-60 ds-section-light">
+      <section className="ds-section ds-section-light">
         <div className="container">
-          <div className="row gy-30">
-            <div className="col-lg-6">
-              <div className="">
-                <div className="flex flex-row justify-between">
-                  <h2 className="text-underline-sm pb-3 mb-3">
-                    <span className="text-primary pe-2">About</span> the
-                    Chairman
-                  </h2>
+          <div className="ds-section-head">
+            <p className="ds-section-kicker">Leadership</p>
+            <h2 className="ds-section-title">About the Chairman</h2>
+          </div>
+          <div className="row mb-4">
+            <div className="col-lg-12">
+              <div className="ds-panel">
+                <div className="d-flex flex-wrap gap-3 align-items-center justify-content-between">
+                  <div>
+                    <p className="ds-section-kicker mb-1">
+                      Leadership Highlights
+                    </p>
+                    <h3 className="mb-0">Trusted, Experienced, Visionary</h3>
+                  </div>
+                  <div className="ds-stats">
+                    <div className="ds-stat">
+                      <p className="ds-section-kicker mb-1">Experience</p>
+                      <h4 className="mb-0">50+ Years</h4>
+                    </div>
+                    <div className="ds-stat">
+                      <p className="ds-section-kicker mb-1">Leadership</p>
+                      <h4 className="mb-0">Board Member</h4>
+                    </div>
+                    <div className="ds-stat">
+                      <p className="ds-section-kicker mb-1">Focus</p>
+                      <h4 className="mb-0">Maritime</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row gy-4 align-items-stretch">
+            <div className="col-lg-5">
+              <div className="ds-card p-3 h-100">
+                <Image
+                  src="/assets/images/members/5.jpg"
+                  alt="service image"
+                  width={600}
+                  height={700}
+                  className="w-100 h-auto"
+                />
+              </div>
+            </div>
+            <div className="col-lg-7">
+              <div className="ds-card p-4 h-100">
+                <div className="d-flex flex-wrap gap-3 align-items-center justify-content-between">
+                  <h3 className="mb-0">Mr. Mohammed Hanif</h3>
                   <Link
                     href="https://drive.google.com/file/d/1EH9jsnxZBYm-rXIF8TGogLyCkY8cxq7F/view?usp=drive_link"
                     target="_blank"
@@ -32,8 +72,7 @@ const index = () => {
                     <Button>Download Company Profile</Button>
                   </Link>
                 </div>
-
-                <p className="text-muted pb-3" style={{ color: "#848E9C" }}>
+                <p className="mt-3 ds-text-muted">
                   Mr. Mohammed Hanif is the Vice-Chairman of the Dhaka Bank PLC.
                   An experienced businessman, Mr. Mohammed Hanif is a renowned
                   industrialist in the country. He has made remarkable
@@ -54,30 +93,54 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div className="col-lg-6">
-              <Image
-                src="/assets/images/members/5.jpg"
-                alt="service image"
-                width={300}
-                height={300}
-              />
-            </div>
           </div>
-          <div className="py-3">
-            <p className="text-muted pb-3" style={{ color: "#848E9C" }}>
-              Hanif Maritime Limited believes that by owning and commercially
-              and technically managing its fleet the company can provide a
-              superior service to its clients in offering innovative, creative,
-              flexible and safe freight solutions. The commercial team delivers
-              reliable and cost effective freight solutions to
-              customers/partners while seeking to optimize revenue through the
-              execution of a well-diversified and risk- adjusted hands on
-              approach to chartering. Despite our relatively recent market
-              entry, Hanif Maritime Limited is already involved in active fixing
-              and continuously growing credibility among industry’s key players
-              thanks to our team of professionals, all with strong shipping
-              backgrounds, networks and experiences
-            </p>
+
+          <div className="row mt-4">
+            <div className="col-lg-12">
+              <div className="ds-panel">
+                <div className="row gy-3 align-items-center">
+                  <div className="col-lg-7">
+                    <h4 className="mb-2">Company Approach</h4>
+                    <p className="ds-text-muted mb-0">
+                      Hanif Maritime Limited believes that by owning and
+                      commercially and technically managing its fleet the
+                      company can provide a superior service to its clients in
+                      offering innovative, creative, flexible and safe freight
+                      solutions. The commercial team delivers reliable and cost
+                      effective freight solutions to customers/partners while
+                      seeking to optimize revenue through the execution of a
+                      well-diversified and risk-adjusted hands on approach to
+                      chartering. Despite our relatively recent market entry,
+                      Hanif Maritime Limited is already involved in active
+                      fixing and continuously growing credibility among
+                      industry’s key players thanks to our team of
+                      professionals, all with strong shipping backgrounds,
+                      networks and experiences.
+                    </p>
+                  </div>
+                  <div className="col-lg-5">
+                    <div className="ds-stats">
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Founded</p>
+                        <h4 className="mb-0">2021</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Focus</p>
+                        <h4 className="mb-0">Dry Bulk</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Operations</p>
+                        <h4 className="mb-0">Global</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Teams</p>
+                        <h4 className="mb-0">Experienced</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

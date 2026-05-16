@@ -19,75 +19,44 @@ const OtherBusiness = () => {
           </div>
         </div>
       </section>
-      <section className="partner-section py-60 ds-section-light">
+      <section className="partner-section ds-section ds-section-light">
         <div className="container">
-          <div className="row gx-5 gy-30">
-            <div className="col-lg-12">
-              <div className="row py-10">
-                <div className="col-lg-3">
-                  <h4 className="text-underline body-font fw-normal mb-3 pb-30">
-                    Dhaka Bank
+          <div className="ds-section-head">
+            <p className="ds-section-kicker">Group Portfolio</p>
+            <h2 className="ds-section-title">Business Units</h2>
+          </div>
+          <div className="row g-4">
+            {[
+              {
+                title: "Dhaka Bank",
+                description:
+                  "A leading financial institution offering a wide range of banking services, including corporate banking, personal banking, loans, and digital banking solutions. We are dedicated to empowering financial growth and delivering exceptional customer service.",
+              },
+              {
+                title: "Hanif Spinning Mills",
+                description:
+                  "Specializing in the production of high-quality yarn, Hanif Spinning Mills plays a crucial role in the textile industry, providing reliable and sustainable products to meet the demands of both local and international markets.",
+              },
+              {
+                title: "Hanif Steel Mills Limited",
+                description:
+                  "Our state-of-the-art steel mill produces a variety of steel products, including rods, bars, and sheets, supporting infrastructure development and contributing to the growth of the construction sector.",
+              },
+              {
+                title: "Hanif Composite Mills",
+                description:
+                  "A leader in the production of composite textiles, Hanif Composite Mills combines modern technology with skilled craftsmanship to deliver premium fabrics used in apparel, home textiles, and industrial applications.",
+              },
+            ].map((unit) => (
+              <div className="col-lg-6" key={unit.title}>
+                <div className="ds-card p-4 h-100">
+                  <h4 className="text-underline body-font fw-normal mb-3">
+                    {unit.title}
                   </h4>
-                </div>
-                <div className="col-lg-9">
-                  <p>
-                    A leading financial institution offering a wide range of
-                    banking services, including corporate banking, personal
-                    banking, loans, and digital banking solutions. We are
-                    dedicated to empowering financial growth and delivering
-                    exceptional customer service.
-                  </p>
+                  <p className="ds-text-muted mb-0">{unit.description}</p>
                 </div>
               </div>
-
-              <div className="row py-10">
-                <div className="col-lg-3">
-                  <h4 className="text-underline body-font fw-normal mb-3 pb-30">
-                    Hanif Spinning Mills
-                  </h4>
-                </div>
-                <div className="col-lg-9">
-                  <p>
-                    Specializing in the production of high-quality yarn, Hanif
-                    Spinning Mills plays a crucial role in the textile industry,
-                    providing reliable and sustainable products to meet the
-                    demands of both local and international markets.
-                  </p>
-                </div>
-              </div>
-
-              <div className="row py-10">
-                <div className="col-lg-3">
-                  <h4 className="text-underline body-font fw-normal mb-3 pb-30">
-                    Hanif Steel Mills Limited
-                  </h4>
-                </div>
-                <div className="col-lg-9">
-                  <p>
-                    Our state-of-the-art steel mill produces a variety of steel
-                    products, including rods, bars, and sheets, supporting
-                    infrastructure development and contributing to the growth of
-                    the construction sector.
-                  </p>
-                </div>
-              </div>
-
-              <div className="row py-10">
-                <div className="col-lg-3">
-                  <h4 className="text-underline body-font fw-normal mb-3 pb-30">
-                    Hanif Composite Mills
-                  </h4>
-                </div>
-                <div className="col-lg-9">
-                  <p>
-                    A leader in the production of composite textiles, Hanif
-                    Composite Mills combines modern technology with skilled
-                    craftsmanship to deliver premium fabrics used in apparel,
-                    home textiles, and industrial applications.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

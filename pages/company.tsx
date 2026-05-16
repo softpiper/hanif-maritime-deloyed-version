@@ -253,133 +253,147 @@ const CompanyPage = () => {
           </div>
         </div>
       </section>
-      <section>
-        <section className="py-60 ds-section-light">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Operational</span> Excellence
-            </h2>
-            <ul className="list-unstyled">
-              <li className="mb-3">
-                <strong>24/7 Operations:</strong> A dedicated operations team
-                available round the clock to manage voyages and address any
-                client concerns.
-              </li>
-              <li className="mb-3">
-                <strong>Advanced Navigation and Communication Systems:</strong>{" "}
-                State-of-the-art technology to ensure safe and efficient
-                voyages.
-              </li>
-              <li className="mb-3">
-                <strong>Fleet Maintenance:</strong> Regular and rigorous
-                maintenance schedules to ensure all vessels meet international
-                safety and environmental standards.
-              </li>
-            </ul>
+      <section className="ds-section ds-section-light">
+        <div className="container">
+          <div className="ds-section-head">
+            <p className="ds-section-kicker">Company Focus</p>
+            <h2 className="ds-section-title">Strategic Pillars</h2>
           </div>
-        </section>
-        <section className="py-60 bg-light">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Sustainability</span>{" "}
-              Initiatives
-            </h2>
-            <ul className="list-unstyled">
-              <li className="mb-3">
-                <strong>Green Shipping Program:</strong> Investing in
-                energy-efficient technologies and alternative fuels to reduce
-                emissions.
-              </li>
-              <li className="mb-3">
-                <strong>Waste Management:</strong> Implementing comprehensive
-                waste management practices to minimize environmental impact.
-              </li>
-              <li className="mb-3">
-                <strong>Community Engagement:</strong> Supporting maritime
-                communities through education, employment, and sustainability
-                projects.
-              </li>
-            </ul>
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Operational</span>
+                  Excellence
+                </h3>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <strong>24/7 Operations:</strong> A dedicated operations
+                    team available round the clock to manage voyages and address
+                    any client concerns.
+                  </li>
+                  <li className="mb-3">
+                    <strong>
+                      Advanced Navigation and Communication Systems:
+                    </strong>
+                    State-of-the-art technology to ensure safe and efficient
+                    voyages.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Fleet Maintenance:</strong> Regular and rigorous
+                    maintenance schedules to ensure all vessels meet
+                    international safety and environmental standards.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Sustainability</span>
+                  Initiatives
+                </h3>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <strong>Green Shipping Program:</strong> Investing in
+                    energy-efficient technologies and alternative fuels to
+                    reduce emissions.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Waste Management:</strong> Implementing
+                    comprehensive waste management practices to minimize
+                    environmental impact.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Community Engagement:</strong> Supporting maritime
+                    communities through education, employment, and
+                    sustainability projects.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Global</span> Presence
+                </h3>
+                <p className="text-muted">
+                  With offices and agents strategically located in major port
+                  cities around the world, Hanif Maritime Ltd ensures seamless
+                  and efficient global operations. Our extensive network allows
+                  us to offer unparalleled service and support to clients
+                  worldwide.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Markets</span> Served
+                </h3>
+                <p className="text-muted">
+                  Hanif Maritime Ltd serves a diverse range of clients across
+                  various industries, including mining, agriculture, and
+                  manufacturing. Our extensive network spans major global trade
+                  routes, connecting key markets in Asia, Europe, the Americas,
+                  and Africa.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Corporate</span> Social
+                  Responsibility
+                </h3>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <strong>Maritime Education:</strong> Partnering with
+                    educational institutions to promote maritime careers and
+                    provide training opportunities.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Employee Welfare:</strong> Ensuring a safe,
+                    inclusive, and rewarding work environment for all employees.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Community Support:</strong> Engaging in various
+                    community development and environmental conservation
+                    projects.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Leadership</span> Team
+                </h3>
+                <p className="text-muted">
+                  Hanif Maritime Ltd is guided by a team of seasoned industry
+                  professionals with extensive experience in maritime
+                  operations, logistics, and corporate governance. Their
+                  collective expertise drives the company&apos;s strategic
+                  direction and operational success.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ds-card p-4 h-100">
+                <h3 className="text-underline-sm pb-3 mb-3">
+                  <span className="text-primary pe-2">Future</span> Plans
+                </h3>
+                <p className="text-muted">
+                  Hanif Maritime Ltd aims to expand its fleet with
+                  next-generation eco-friendly vessels and explore new markets
+                  to enhance our service offerings. We are committed to
+                  leveraging technological advancements to improve operational
+                  efficiency and environmental performance.
+                </p>
+              </div>
+            </div>
           </div>
-        </section>
-        <section className="py-60">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Global</span> Presence
-            </h2>
-            <p className="text-muted">
-              With offices and agents strategically located in major port cities
-              around the world, Hanif Maritime Ltd ensures seamless and
-              efficient global operations. Our extensive network allows us to
-              offer unparalleled service and support to clients worldwide.
-            </p>
-          </div>
-        </section>
-        <section className="py-60 bg-light">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Markets</span> Served
-            </h2>
-            <p className="text-muted">
-              Hanif Maritime Ltd serves a diverse range of clients across
-              various industries, including mining, agriculture, and
-              manufacturing. Our extensive network spans major global trade
-              routes, connecting key markets in Asia, Europe, the Americas, and
-              Africa.
-            </p>
-          </div>
-        </section>
-        <section className="py-60">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Corporate</span> Social
-              Responsibility
-            </h2>
-            <ul className="list-unstyled">
-              <li className="mb-3">
-                <strong>Maritime Education:</strong> Partnering with educational
-                institutions to promote maritime careers and provide training
-                opportunities.
-              </li>
-              <li className="mb-3">
-                <strong>Employee Welfare:</strong> Ensuring a safe, inclusive,
-                and rewarding work environment for all employees.
-              </li>
-              <li className="mb-3">
-                <strong>Community Support:</strong> Engaging in various
-                community development and environmental conservation projects.
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section className="py-60 bg-light">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Leadership</span> Team
-            </h2>
-            <p className="text-muted">
-              Hanif Maritime Ltd is guided by a team of seasoned industry
-              professionals with extensive experience in maritime operations,
-              logistics, and corporate governance. Their collective expertise
-              drives the company&apos;s strategic direction and operational
-              success.
-            </p>
-          </div>
-        </section>
-        <section className="py-60">
-          <div className="container">
-            <h2 className="text-underline-sm pb-3 mb-3">
-              <span className="text-primary pe-2">Future</span> Plans
-            </h2>
-            <p className="text-muted dark:text-white">
-              Hanif Maritime Ltd aims to expand its fleet with next-generation
-              eco-friendly vessels and explore new markets to enhance our
-              service offerings. We are committed to leveraging technological
-              advancements to improve operational efficiency and environmental
-              performance.
-            </p>
-          </div>
-        </section>
+        </div>
       </section>
     </Wrapper>
   );

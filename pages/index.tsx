@@ -51,13 +51,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="service-section py-60 ds-section-light">
+      <section className="service-section ds-section ds-section-light">
         <div className="container">
           <div className="row gy-30">
             <div className="col-lg-12">
-              <h3 className="text-uppercase fw-bold lh-lg text-center letter-spacing-lg pb-60">
-                Services
-              </h3>
+              <div className="ds-section-head">
+                <p className="ds-section-kicker">Our Capabilities</p>
+                <h3 className="ds-section-title">Services</h3>
+              </div>
               <div className="row gy-5">
                 {[
                   {

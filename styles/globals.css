@@ -120,6 +120,35 @@
     color: var(--ds-slate);
   }
 
+  .ds-section {
+    padding: 64px 0;
+  }
+
+  .ds-section-head {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+
+  .ds-section-kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ds-slate);
+  }
+
+  .ds-section-title {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 700;
+    color: var(--ds-ink);
+    margin-bottom: 12px;
+  }
+
+  .ds-text-muted {
+    color: var(--ds-slate);
+  }
+
   .ds-card {
     background-color: var(--ds-white);
     border: 1px solid var(--ds-border);
@@ -136,6 +165,27 @@
     background-color: var(--ds-dark-card);
     border-radius: 12px;
     box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+  }
+
+  .ds-panel {
+    background-color: var(--ds-white);
+    border: 1px solid var(--ds-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+  }
+
+  .ds-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+
+  .ds-stat {
+    background-color: var(--ds-snow);
+    border: 1px solid var(--ds-border);
+    border-radius: 12px;
+    padding: 16px;
   }
 
   .ds-pill {

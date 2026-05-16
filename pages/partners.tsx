@@ -33,39 +33,57 @@ const Partners = () => {
         </div>
       </section>
 
-      <section className="py-5 ds-section-light">
-        <div className="container py-4">
-          <div className="col-lg-12">
-            <div className="card border-0 h-100 overflow-hidden ds-card">
-              {/* <div className="card-header bg-primary bg-opacity-10 py-3">
-                  <h4 className="mb-0 text-primary">Official Partners</h4>
-                </div> */}
-              <div className="card-body">
-                <OfficialPartnersList />
-              </div>
-            </div>
+      <section className="ds-section ds-section-light">
+        <div className="container">
+          <div className="ds-section-head">
+            <p className="ds-section-kicker">Network</p>
+            <h3 className="ds-section-title">Partner Groups</h3>
           </div>
-          <div className="col-lg-12">
-            <div className="card border-0 h-100 overflow-hidden ds-card">
-              {/* <div className="card-header bg-info bg-opacity-10 py-3">
-                  <h4 className="mb-0 text-info">Bunker Partners</h4>
-                </div> */}
-              <div className="card-body">
-                <BunkerPartnersList />
-              </div>
-            </div>
-          </div>
-
-          <div className="row mt-4">
+          <div className="row mb-4">
             <div className="col-12">
-              <div className="card border-0 overflow-hidden ds-card">
-                {/* <div className="card-header bg-success bg-opacity-10 py-3">
-                  <h4 className="mb-0 text-success">Chartering Partners</h4>
-                </div> */}
-                <div className="card-body">
-                  <CharteringPartnersList />
+              <div className="ds-panel">
+                <div className="row gy-3 align-items-center">
+                  <div className="col-lg-5">
+                    <p className="ds-section-kicker mb-1">Global Network</p>
+                    <h4 className="mb-2">Trusted partners across regions</h4>
+                    <p className="ds-text-muted mb-0">
+                      We collaborate with chartering, bunker, and official
+                      partners to deliver reliable maritime operations.
+                    </p>
+                  </div>
+                  <div className="col-lg-7">
+                    <div className="ds-stats">
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Official</p>
+                        <h4 className="mb-0">2+</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Bunker</p>
+                        <h4 className="mb-0">6+</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Chartering</p>
+                        <h4 className="mb-0">20+</h4>
+                      </div>
+                      <div className="ds-stat">
+                        <p className="ds-section-kicker mb-1">Regions</p>
+                        <h4 className="mb-0">Global</h4>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <OfficialPartnersList />
+            </div>
+            <div className="col-lg-6">
+              <BunkerPartnersList />
+            </div>
+            <div className="col-12">
+              <CharteringPartnersList />
             </div>
           </div>
         </div>
