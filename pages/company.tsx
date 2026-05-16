@@ -7,20 +7,22 @@ import Link from "next/link";
 const CompanyPage = () => {
   return (
     <Wrapper>
-      <section
-        className="banner-section position-relative overflow-hidden bg-dark text-white"
-        style={{ paddingTop: "200px" }}
-      >
-        <div className="parallax bg-cover position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
+      <section className="ds-section-dark ds-hero">
         <div className="container">
           <div className="row align-items-center">
-            <h1 className="display-4">Company Profile: HANIF MARITIME LTD</h1>
-            <p className="lead">Industry: Maritime Transport</p>
-            <p className="lead">Specialization: Dry Bulk Shipping</p>
+            <h1 className="ds-hero-title text-white">
+              Company Profile: HANIF MARITIME LTD
+            </h1>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+              Industry: Maritime Transport
+            </p>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+              Specialization: Dry Bulk Shipping
+            </p>
           </div>
         </div>
       </section>
-      <section className="work-process-section py-60">
+      <section className="work-process-section py-60 ds-section-light">
         <div className="container">
           <div className="row gx-5 gy-30">
             <div className="col-lg-9">
@@ -194,7 +196,7 @@ const CompanyPage = () => {
           </div>
         </div>
       </section>
-      <section className="pb-60">
+      <section className="pb-60 ds-section-light">
         <div className="container">
           <div className="row gy-30">
             <div className="col-lg-6">
@@ -252,7 +254,7 @@ const CompanyPage = () => {
         </div>
       </section>
       <section>
-        <section className="py-60">
+        <section className="py-60 ds-section-light">
           <div className="container">
             <h2 className="text-underline-sm pb-3 mb-3">
               <span className="text-primary pe-2">Operational</span> Excellence

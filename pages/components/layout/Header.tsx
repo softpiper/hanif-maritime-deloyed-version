@@ -22,7 +22,7 @@ const Header = () => {
       id="navbar_top"
       className="transparent-header position-fixed"
       style={{
-        backgroundColor: "white",
+        backgroundColor: "#FFFFFF",
         width: "100%",
         top: 0,
         left: 0,
@@ -30,7 +30,10 @@ const Header = () => {
       }}
     >
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-dark py-3 py-lg-0 border-bottom">
+        <nav
+          className="navbar navbar-expand-lg py-3 py-lg-0 border-bottom"
+          style={{ borderColor: "#E6E8EA" }}
+        >
           <Link className=" site-logo navbar-brand" href="/" rel="home">
             <Image
               className="logo-dark"
@@ -53,13 +56,13 @@ const Header = () => {
             data-bs-toggle="offcanvas"
             data-bs-target="#main_nav"
             aria-controls="main_nav"
-            style={{ backgroundColor: "#20304F" }}
+            style={{ backgroundColor: "#1E2026" }}
           >
             <span className="navbar-toggler-icon" />
           </button>
           <div
             className="offcanvas offcanvas-lg offcanvas-end p-3 p-lg-0"
-            style={{ backgroundColor: "whitesmoke", width: "300px" }}
+            style={{ backgroundColor: "#FFFFFF", width: "300px" }}
             id="main_nav"
             tabIndex={-1}
           >
@@ -70,7 +73,7 @@ const Header = () => {
                   className="btn-close btn-close-dark"
                   data-bs-dismiss="offcanvas"
                   aria-label="Close"
-                  style={{ backgroundColor: "darkgreen" }}
+                  style={{ backgroundColor: "#1E2026" }}
                 />
               </div>
 
@@ -80,13 +83,21 @@ const Header = () => {
                     <Link
                       className={
                         router.pathname === item.path
-                          ? "nav-link active"
-                          : "nav-link"
+                          ? "nav-link ds-nav-link active"
+                          : "nav-link ds-nav-link"
                       }
                       href={item.path}
-                      style={{ color: "darkgreen" }}
+                      style={
+                        item.label === "Contact"
+                          ? undefined
+                          : { color: "#32313A" }
+                      }
                     >
-                      {item.label}
+                      {item.label === "Contact" ? (
+                        <span className="ds-nav-cta">Contact</span>
+                      ) : (
+                        item.label
+                      )}
                     </Link>
                   </li>
                 ))}

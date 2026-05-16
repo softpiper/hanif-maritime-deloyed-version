@@ -3,56 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  --ds-yellow: #f0b90b;
+  --ds-gold: #ffd000;
+  --ds-gold-light: #f8d12f;
+  --ds-active-yellow: #d0980b;
+  --ds-focus-blue: #1eaedb;
+  --ds-white: #ffffff;
+  --ds-snow: #f5f5f5;
+  --ds-dark: #222126;
+  --ds-dark-card: #2b2f36;
+  --ds-ink: #1e2026;
+  --ds-text: #1e2026;
+  --ds-text-secondary: #32313a;
+  --ds-slate: #848e9c;
+  --ds-steel: #686a6c;
+  --ds-muted: #777e90;
+  --ds-border: #e6e8ea;
+  --ds-green: #0ecb81;
+  --ds-red: #f6465d;
 }
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 218 11% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 218 11% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --popover-foreground: 218 11% 14%;
+    --primary: 46 92% 49%;
+    --primary-foreground: 218 11% 14%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 218 11% 14%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 218 11% 14%;
+    --destructive: 355 92% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 91%;
+    --input: 220 10% 91%;
+    --ring: 196 76% 49%;
+    --chart-1: 160 60% 45%;
+    --chart-2: 355 92% 63%;
+    --chart-3: 46 92% 49%;
+    --chart-4: 196 76% 49%;
+    --chart-5: 220 10% 91%;
+    --radius: 0.75rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -88,5 +85,114 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "BinancePlex", Arial, sans-serif;
+    color: var(--ds-text);
+    background-color: var(--ds-white);
+  }
+}
+
+@layer components {
+  .ds-section-light {
+    background-color: var(--ds-white);
+    color: var(--ds-text);
+  }
+
+  .ds-section-dark {
+    background-color: var(--ds-dark);
+    color: var(--ds-white);
+  }
+
+  .ds-hero {
+    padding: 64px 0;
+  }
+
+  .ds-hero-title {
+    font-size: clamp(32px, 4vw, 60px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  .ds-hero-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ds-slate);
+  }
+
+  .ds-card {
+    background-color: var(--ds-white);
+    border: 1px solid var(--ds-border);
+    border-radius: 12px;
+    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+    transition: box-shadow 200ms ease;
+  }
+
+  .ds-card:hover {
+    box-shadow: rgba(8, 8, 8, 0.05) 0px 3px 5px 5px;
+  }
+
+  .ds-card-dark {
+    background-color: var(--ds-dark-card);
+    border-radius: 12px;
+    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+  }
+
+  .ds-pill {
+    border-radius: 50px;
+  }
+
+  .ds-nav-link {
+    color: var(--ds-text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 200ms ease;
+  }
+
+  .ds-nav-link:hover {
+    color: #1a1a1a;
+  }
+
+  .ds-nav-link.active {
+    color: var(--ds-yellow);
+  }
+
+  .ds-nav-cta {
+    background-color: var(--ds-yellow);
+    color: var(--ds-ink);
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-weight: 600;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .ds-nav-cta:hover {
+    background-color: var(--ds-focus-blue);
+    color: var(--ds-white);
+  }
+
+  .text-primary {
+    color: var(--ds-yellow) !important;
+  }
+
+  .bg-primary {
+    background-color: var(--ds-yellow) !important;
+    color: var(--ds-ink) !important;
+  }
+
+  .border-primary {
+    border-color: var(--ds-yellow) !important;
+  }
+
+  .nav-tabs .nav-link {
+    color: var(--ds-text-secondary);
+    font-weight: 600;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: var(--ds-ink);
+    border-color: var(--ds-yellow) var(--ds-yellow) var(--ds-white);
   }
 }

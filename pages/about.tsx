@@ -7,27 +7,15 @@ import Link from "next/link";
 const index = () => {
   return (
     <Wrapper>
-      <section
-        className="bg-secondary"
-        style={{
-          backgroundColor: "rgba(15, 15, 15, 1)",
-          backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-        `,
-          backgroundSize: "20px 20px",
-        }}
-      >
+      <section className="ds-section-dark ds-hero">
         <div className="container">
-          <div className="text-white text-center py-24">
-            <h3 className="text-uppercase fw-bold lh-lg letter-spacing-lg">
-              HANIF MARITIME LIMITED
-            </h3>
+          <div className="text-white text-center">
+            <h3 className="ds-hero-title text-white">HANIF MARITIME LIMITED</h3>
           </div>
         </div>
       </section>
 
-      <section className="py-60">
+      <section className="py-60 ds-section-light">
         <div className="container">
           <div className="row gy-30">
             <div className="col-lg-6">
@@ -45,7 +33,7 @@ const index = () => {
                   </Link>
                 </div>
 
-                <p className="text-muted pb-3">
+                <p className="text-muted pb-3" style={{ color: "#848E9C" }}>
                   Mr. Mohammed Hanif is the Vice-Chairman of the Dhaka Bank PLC.
                   An experienced businessman, Mr. Mohammed Hanif is a renowned
                   industrialist in the country. He has made remarkable
@@ -76,7 +64,7 @@ const index = () => {
             </div>
           </div>
           <div className="py-3">
-            <p className="text-muted pb-3">
+            <p className="text-muted pb-3" style={{ color: "#848E9C" }}>
               Hanif Maritime Limited believes that by owning and commercially
               and technically managing its fleet the company can provide a
               superior service to its clients in offering innovative, creative,

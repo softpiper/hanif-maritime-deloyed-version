@@ -5,24 +5,12 @@ import Image from "next/image";
 const Gallery = () => {
   return (
     <Wrapper>
-      <section
-        className="bg-secondary"
-        style={{
-          backgroundColor: "rgba(15, 15, 15, 1)",
-          backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-        `,
-          backgroundSize: "20px 20px",
-        }}
-      >
+      <section className="ds-section-dark ds-hero">
         <div className="container">
-          <div className="text-white text-center py-24">
+          <div className="text-white text-center">
             {/* <Hero2 /> */}
-            <h3 className="text-uppercase fw-bold lh-lg letter-spacing-lg">
-              OCEAN GOING VESSELS
-            </h3>
-            <p className="font-monospace">
+            <h3 className="ds-hero-title text-white">OCEAN GOING VESSELS</h3>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
               Our gallery showcases the impressive range of vessels that form
               the backbone of our shipping operations. From bulk carriers to
               tankers, each ship is equipped with advanced technology and
@@ -36,9 +24,11 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section className="casestudies-section py-60">
+      <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="text-blue font-bold">RUBAIYAT HANIF</h2>
+          <h2 className="font-bold" style={{ color: "#1E2026" }}>
+            RUBAIYAT HANIF
+          </h2>
 
           <div className="row">
             {[
@@ -49,7 +39,7 @@ const Gallery = () => {
               "image_45.jpg",
             ].map((image, index) => (
               <div className="col-lg-4 content-center" key={index}>
-                <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
+                <div className="item-inner position-relative overflow-hidden gap-2 mb-2 ds-card">
                   <Image
                     src={`/assets/images/ship/${image}`}
                     alt={`ship ${index + 1}`}
@@ -64,9 +54,11 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section className="casestudies-section py-60">
+      <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="text-blue font-bold">ZARAAR HANIF</h2>
+          <h2 className="font-bold" style={{ color: "#1E2026" }}>
+            ZARAAR HANIF
+          </h2>
           <div className="row">
             {[
               "image_51.jpg",
@@ -84,7 +76,7 @@ const Gallery = () => {
               "image_63.jpg",
             ].map((image, index) => (
               <div className="col-lg-4 content-center" key={index}>
-                <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
+                <div className="item-inner position-relative overflow-hidden gap-2 mb-2 ds-card">
                   <Image
                     src={`/assets/images/ship/${image}`}
                     alt={`ship ${index + 1}`}
@@ -99,9 +91,11 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section className="casestudies-section py-60">
+      <section className="casestudies-section py-60 ds-section-light">
         <div className="container">
-          <h2 className="text-blue font-bold">GUL BANO</h2>
+          <h2 className="font-bold" style={{ color: "#1E2026" }}>
+            GUL BANO
+          </h2>
           <div className="row">
             {[
               "image_14.jpeg",
@@ -115,7 +109,7 @@ const Gallery = () => {
               "image_16.jpeg",
             ].map((image, index) => (
               <div className="col-lg-4 content-center" key={index}>
-                <div className="item-inner position-relative overflow-hidden gap-2 mb-2">
+                <div className="item-inner position-relative overflow-hidden gap-2 mb-2 ds-card">
                   <Image
                     src={`/assets/images/ship/${image}`}
                     alt={`ship ${index + 1}`}

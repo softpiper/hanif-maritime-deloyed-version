@@ -6,23 +6,11 @@ import Image from "next/image";
 const index = () => {
   return (
     <Wrapper>
-      <section
-        className="bg-secondary"
-        style={{
-          backgroundColor: "rgba(15, 15, 15, 1)",
-          backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-        `,
-          backgroundSize: "20px 20px",
-        }}
-      >
+      <section className="ds-section-dark ds-hero">
         <div className="container">
-          <div className="text-white text-center py-24">
-            <h3 className="text-uppercase fw-bold lh-lg letter-spacing-lg">
-              Services
-            </h3>
-            <p className="font-monospace">
+          <div className="text-white text-center">
+            <h3 className="ds-hero-title text-white">Services</h3>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
               Hanif Maritime Ltd aims to expand its fleet with next-generation
               eco-friendly vessels and explore new markets to enhance our
               service offerings. We are committed to leveraging technological
@@ -33,13 +21,13 @@ const index = () => {
         </div>
       </section>
 
-      <section className="service-section py-60">
+      <section className="service-section py-60 ds-section-light">
         <div className="container">
           <div className="row gx-5 gy-30">
             <div className="col-lg-12">
               <div className="row gy-5">
                 <div className="col-lg-3">
-                  <div className="card single-team-member h-100">
+                  <div className="card single-team-member h-100 ds-card">
                     <div className="team-member-photo">
                       <Image
                         width={300}
@@ -89,7 +77,7 @@ const index = () => {
                 </div>
 
                 <div className="col-lg-3">
-                  <div className="card single-team-member h-100">
+                  <div className="card single-team-member h-100 ds-card">
                     <div className="team-member-photo">
                       <Image
                         width={300}
@@ -134,7 +122,7 @@ const index = () => {
                 </div>
 
                 <div className="col-lg-3">
-                  <div className="card single-team-member h-100">
+                  <div className="card single-team-member h-100 ds-card">
                     <div className="team-member-photo">
                       <Image
                         width={300}
@@ -189,7 +177,7 @@ const index = () => {
                 </div>
 
                 <div className="col-lg-3">
-                  <div className="card single-team-member h-100">
+                  <div className="card single-team-member h-100 ds-card">
                     <div className="team-member-photo">
                       <Image
                         width={300}

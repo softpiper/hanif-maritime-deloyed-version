@@ -5,23 +5,11 @@ import Wrapper from "./components/layout/Wrapper";
 const OtherBusiness = () => {
   return (
     <Wrapper>
-      <section
-        className="bg-secondary"
-        style={{
-          backgroundColor: "rgba(15, 15, 15, 1)",
-          backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-        `,
-          backgroundSize: "20px 20px",
-        }}
-      >
+      <section className="ds-section-dark ds-hero">
         <div className="container">
-          <div className="text-white text-center py-24">
-            <h3 className="text-uppercase fw-bold lh-lg letter-spacing-lg">
-              Our Business Units
-            </h3>
-            <p className="font-monospace">
+          <div className="text-white text-center">
+            <h3 className="ds-hero-title text-white">Our Business Units</h3>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
               At Hanif Group, we pride ourselves on our diverse range of
               business ventures, each driven by a commitment to excellence,
               innovation, and quality. Our portfolio spans various industries,
@@ -31,7 +19,7 @@ const OtherBusiness = () => {
           </div>
         </div>
       </section>
-      <section className="partner-section py-60">
+      <section className="partner-section py-60 ds-section-light">
         <div className="container">
           <div className="row gx-5 gy-30">
             <div className="col-lg-12">

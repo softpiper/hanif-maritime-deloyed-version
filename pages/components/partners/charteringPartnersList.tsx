@@ -135,9 +135,9 @@ export default function CharteringPartnersList() {
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className=" p-4 rounded-xl shadow-xl border border-slate-700/30 backdrop-blur-sm"
+      className="p-4 ds-card"
     >
-      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 mb-6">
+      <h3 className="text-2xl font-bold mb-6" style={{ color: "#1E2026" }}>
         Chartering Partners
       </h3>
 
@@ -175,7 +175,7 @@ const Partner = ({
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.4, delay }}
-      className="flex items-center gap-3 rounded-lg hover:bg-gray-200 transition-colors"
+      className="flex items-center gap-3 rounded-lg hover:bg-[#F5F5F5] transition-colors"
     >
       <Link
         href={siteUrl || "/partners"}
@@ -183,7 +183,10 @@ const Partner = ({
         target="_blank"
       >
         <Logo logoUrl={logoUrl} />
-        <span className="text-lg font-semibold text-gray-800 no-underline">
+        <span
+          className="text-lg font-semibold no-underline"
+          style={{ color: "#1E2026" }}
+        >
           {title}
         </span>
       </Link>
@@ -193,7 +196,10 @@ const Partner = ({
 
 const Logo = ({ logoUrl }: { logoUrl?: string }) => {
   return (
-    <div className="bg-gray-400 p-1">
+    <div
+      className="p-1"
+      style={{ backgroundColor: "#F5F5F5", border: "1px solid #E6E8EA" }}
+    >
       <Image
         src={logoUrl || "/default-logo.png"} // Fallback to a default logo if logoUrl is not provided
         alt="Company Logo"

@@ -4,23 +4,11 @@ import Wrapper from "./components/layout/Wrapper";
 const contact = () => {
   return (
     <Wrapper>
-      <section
-        className="bg-secondary"
-        style={{
-          backgroundColor: "rgba(15, 15, 15, 1)",
-          backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-        `,
-          backgroundSize: "20px 20px",
-        }}
-      >
+      <section className="ds-section-dark ds-hero">
         <div className="container">
-          <div className="text-white text-center py-24">
-            <h3 className="text-uppercase fw-bold lh-lg letter-spacing-lg">
-              Contact Us
-            </h3>
-            <p className="font-monospace">
+          <div className="text-white text-center">
+            <h3 className="ds-hero-title text-white">Contact Us</h3>
+            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
               We are here to assist you with any inquiries or support you may
               need. Reach out to us through the following contact details, and
               our team will be more than happy to help.Feel free to get in touch
@@ -30,90 +18,104 @@ const contact = () => {
           </div>
         </div>
       </section>
-      <section className="news-section py-60">
+      <section className="news-section py-60 ds-section-light">
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              <h1 className="text-underline fw-bold fs-2 mb-30 pb-20">
-                Get in Touch
-              </h1>
-              <ul className="list-unstyled ps-0 d-grid gap-2">
-                <li>
-                  <i className="fa-solid fa-location-dot text-primary" />
-                  <span
-                    style={{
-                      marginLeft: "10px",
-                      color: "black",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Head Office:{" "}
-                  </span>
-                  <br />
-                  <span style={{ marginLeft: "10px" }}>
-                    House # 86,Level # 3 Road # 14, Block # B, Banani,
-                    Dhaka-1213
-                  </span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-location-dot text-primary" />
-                  <span
-                    style={{
-                      marginLeft: "10px",
-                      color: "black",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Corporate Office:{" "}
-                  </span>
-                  <br />
-                  <span style={{ marginLeft: "10px" }}>
-                    73/1, Hrishikesh Das road, Narinda, Dholaikhal, Dhaka-1100
-                  </span>
-                </li>
+              <div className="ds-card p-4">
+                <h1 className="fw-bold fs-2 mb-4">Get in Touch</h1>
+                <ul className="list-unstyled ps-0 d-grid gap-2">
+                  <li>
+                    <i
+                      className="fa-solid fa-location-dot"
+                      style={{ color: "#F0B90B" }}
+                    />
+                    <span
+                      style={{
+                        marginLeft: "10px",
+                        color: "#1E2026",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Head Office:{" "}
+                    </span>
+                    <br />
+                    <span style={{ marginLeft: "10px", color: "#848E9C" }}>
+                      House # 86,Level # 3 Road # 14, Block # B, Banani,
+                      Dhaka-1213
+                    </span>
+                  </li>
+                  <li>
+                    <i
+                      className="fa-solid fa-location-dot"
+                      style={{ color: "#F0B90B" }}
+                    />
+                    <span
+                      style={{
+                        marginLeft: "10px",
+                        color: "#1E2026",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Corporate Office:{" "}
+                    </span>
+                    <br />
+                    <span style={{ marginLeft: "10px", color: "#848E9C" }}>
+                      73/1, Hrishikesh Das road, Narinda, Dholaikhal, Dhaka-1100
+                    </span>
+                  </li>
 
-                <li>
-                  <a
-                    href="tel:880255033661"
-                    className="text-decoration-none d-flex gap-2 text-white text-opacity-75"
-                  >
-                    <i className="fa-solid fa-phone text-primary" />
-                    <span className="text-black">+880255033661</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:operation.hml@hanif-group.com"
-                    className="text-decoration-none d-flex gap-2 text-black text-opacity-75"
-                  >
-                    <i className="fa-solid fa-envelope-open-text text-primary" />
-                    <span>operation.hml@hanif-group.com</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:technical.hml@hanif-group.com"
-                    className="text-decoration-none d-flex gap-2 text-black text-opacity-75"
-                  >
-                    {/* <i className="fa-solid fa-envelope-open-text text-primary" /> */}
-                    <span>technical.hml@hanif-group.com</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:chartering.hml@hanif-group.com"
-                    className="text-decoration-none d-flex gap-2 text-black text-opacity-75"
-                  >
-                    {/* <i className="fa-solid fa-envelope-open-text text-primary" /> */}
-                    <span>chartering.hml@hanif-group.com</span>
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <a
+                      href="tel:880255033661"
+                      className="text-decoration-none d-flex gap-2"
+                      style={{ color: "#32313A" }}
+                    >
+                      <i
+                        className="fa-solid fa-phone"
+                        style={{ color: "#F0B90B" }}
+                      />
+                      <span>+880255033661</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:operation.hml@hanif-group.com"
+                      className="text-decoration-none d-flex gap-2"
+                      style={{ color: "#32313A" }}
+                    >
+                      <i
+                        className="fa-solid fa-envelope-open-text"
+                        style={{ color: "#F0B90B" }}
+                      />
+                      <span>operation.hml@hanif-group.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:technical.hml@hanif-group.com"
+                      className="text-decoration-none d-flex gap-2"
+                      style={{ color: "#32313A" }}
+                    >
+                      <span>technical.hml@hanif-group.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:chartering.hml@hanif-group.com"
+                      className="text-decoration-none d-flex gap-2"
+                      style={{ color: "#32313A" }}
+                    >
+                      <span>chartering.hml@hanif-group.com</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="col-md-8">
               <section className="news-section py-60">
                 <div className="container">
-                  <div className="mb-5">
+                  <div className="mb-5 ds-card p-3">
                     <nav>
                       <div className="nav nav-tabs" id="nav-tab" role="tablist">
                         <button

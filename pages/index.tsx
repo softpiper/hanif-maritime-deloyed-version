@@ -12,39 +12,46 @@ export default function Home() {
       <Head>
         <title>Hanif Maritime Limited</title>
       </Head>
-      <section className="pb-5 mb-20 bg-gradient-to-r from-green-100 to-blue-100">
-        <div className="flex flex-wrap">
-          <div className="w-full md:w-7/12 flex items-center justify-center">
-            <div className="text-center w-11/12 md:w-8/12 py-3">
-              <h3 className="text-uppercase font-bold leading-loose tracking-widest">
-                Hanif Maritime Limited
-              </h3>
-              <p className="text-sm font-mono md:text-xl">
-                HANIF MARITIME LIMITED (HML) was established on 07th September
-                2021 as a sister concern of HANIF GROUP, specializing in the
-                transportation of dry bulk cargoes with International business
-                standards.
-              </p>
-              <Link
-                href="https://drive.google.com/file/d/1EH9jsnxZBYm-rXIF8TGogLyCkY8cxq7F/view?usp=drive_link"
-                target="_blank"
-              >
-                <Button>Download Company Profile</Button>
-              </Link>
+      <section className="ds-section-dark ds-hero">
+        <div className="container">
+          <div className="row align-items-center gy-4">
+            <div className="col-lg-6">
+              <div className="text-start">
+                <h1 className="ds-hero-title text-white mb-3">
+                  Hanif Maritime Limited
+                </h1>
+                <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+                  HANIF MARITIME LIMITED (HML) was established on 07th September
+                  2021 as a sister concern of HANIF GROUP, specializing in the
+                  transportation of dry bulk cargoes with International business
+                  standards.
+                </p>
+                <Link
+                  href="https://drive.google.com/file/d/1EH9jsnxZBYm-rXIF8TGogLyCkY8cxq7F/view?usp=drive_link"
+                  target="_blank"
+                >
+                  <Button className="mt-3">Download Company Profile</Button>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="w-full md:w-5/12 p-5">
-            <video autoPlay muted loop className="w-full h-auto">
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/halal-invest-d8334.appspot.com/o/hanif-maritime-ltd%2Fvideo%2FAn8x47rADOg5UxQQtauBCgofvcCV4Ktrmb9BYytNkT1yaU_7KHRNcOPWwtXKmSRqL9pbMGz7O5Np7ImISSy5vG3l.mp4?alt=media&token=d3480d7c-06e3-46f8-9350-7ae88a72cf61"
-                type="video/mp4"
-              />
-              Your browser does not support HTML5 video.
-            </video>
+            <div className="col-lg-6">
+              <div
+                className="position-relative overflow-hidden"
+                style={{ borderRadius: "24px", border: "1px solid #2B2F36" }}
+              >
+                <video autoPlay muted loop playsInline className="w-100 h-auto">
+                  <source
+                    src="https://firebasestorage.googleapis.com/v0/b/halal-invest-d8334.appspot.com/o/hanif-maritime-ltd%2Fvideo%2FAn8x47rADOg5UxQQtauBCgofvcCV4Ktrmb9BYytNkT1yaU_7KHRNcOPWwtXKmSRqL9pbMGz7O5Np7ImISSy5vG3l.mp4?alt=media&token=d3480d7c-06e3-46f8-9350-7ae88a72cf61"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section className="service-section pb-60">
+      <section className="service-section py-60 ds-section-light">
         <div className="container">
           <div className="row gy-30">
             <div className="col-lg-12">
@@ -76,7 +83,7 @@ export default function Home() {
                 ].map((service) => (
                   <div className="col-lg-3" key={service.id}>
                     <Link href="/services" className="text-decoration-none">
-                      <div className="card single-team-member h-100">
+                      <div className="card single-team-member h-100 ds-card">
                         <div className="team-member-photo">
                           <Image
                             width={300}

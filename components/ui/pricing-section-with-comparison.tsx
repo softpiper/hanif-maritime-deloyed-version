@@ -99,16 +99,20 @@ function Pricing() {
   ];
 
   return (
-    <div className="w-full py-12 md:py-16 bg-gray-50">
+    <div className="w-full py-12 md:py-16 ds-section-light">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex text-center justify-center items-center gap-2 flex-col mb-6 md:mb-8">
-          <Badge className="px-3 py-1 text-sm md:text-base bg-blue-600 hover:bg-blue-700">
-            Our Fleet
-          </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 max-w-2xl">
+          <Badge className="px-3 py-1 text-sm md:text-base">Our Fleet</Badge>
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-2xl"
+            style={{ color: "#1E2026" }}
+          >
             Explore Our Modern Vessel Fleet
           </h2>
-          <p className="text-sm md:text-base text-gray-600 max-w-2xl">
+          <p
+            className="text-sm md:text-base max-w-2xl"
+            style={{ color: "#848E9C" }}
+          >
             Our fleet combines cutting-edge technology with superior
             craftsmanship for safe and efficient global transportation.
           </p>
@@ -120,15 +124,15 @@ function Pricing() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm transition-all duration-300 flex items-center gap-1 ${
+              className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm transition-all duration-300 flex items-center gap-1 border ${
                 activeTab === index
-                  ? "bg-blue-600 text-white"
-                  : "bg-white hover:bg-gray-100 text-gray-800"
+                  ? "bg-[#F0B90B] text-[#1E2026] border-[#F0B90B]"
+                  : "bg-white hover:bg-gray-100 text-[#32313A] border-[#E6E8EA]"
               }`}
             >
               <Ship
                 className={`w-4 h-4 ${
-                  activeTab === index ? "text-white" : "text-blue-600"
+                  activeTab === index ? "text-[#1E2026]" : "text-[#F0B90B]"
                 }`}
               />
               <span className="font-medium">
@@ -141,7 +145,10 @@ function Pricing() {
         {/* Main Content - More compact with smaller gaps */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
           {/* Vessel Image - Optimized for mobile */}
-          <div className="lg:col-span-5 rounded-lg overflow-hidden shadow bg-white p-2 md:p-3">
+          <div
+            className="lg:col-span-5 rounded-lg overflow-hidden shadow bg-white p-2 md:p-3"
+            style={{ border: "1px solid #E6E8EA" }}
+          >
             <div className="relative h-[200px] sm:h-[250px] md:h-[300px] rounded overflow-hidden shadow-inner">
               <Image
                 src={vessels[activeTab].image}
@@ -158,27 +165,54 @@ function Pricing() {
             </div>
 
             <div className="grid grid-cols-3 gap-2 mt-3">
-              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
-                <p className="text-xs md:text-sm text-blue-600 font-medium">
+              <div
+                className="p-2 md:p-3 rounded text-center"
+                style={{ backgroundColor: "#F5F5F5" }}
+              >
+                <p
+                  className="text-xs md:text-sm font-medium"
+                  style={{ color: "#848E9C" }}
+                >
                   DWT
                 </p>
-                <p className="text-sm md:text-base font-bold">
+                <p
+                  className="text-sm md:text-base font-bold"
+                  style={{ color: "#1E2026" }}
+                >
                   {vessels[activeTab].details.DWT.split(" ")[0]}
                 </p>
               </div>
-              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
-                <p className="text-xs md:text-sm text-blue-600 font-medium">
+              <div
+                className="p-2 md:p-3 rounded text-center"
+                style={{ backgroundColor: "#F5F5F5" }}
+              >
+                <p
+                  className="text-xs md:text-sm font-medium"
+                  style={{ color: "#848E9C" }}
+                >
                   Built
                 </p>
-                <p className="text-sm md:text-base font-bold">
+                <p
+                  className="text-sm md:text-base font-bold"
+                  style={{ color: "#1E2026" }}
+                >
                   {vessels[activeTab].details.YEAR_OF_BUILD.split(" ")[0]}
                 </p>
               </div>
-              <div className="bg-blue-50 p-2 md:p-3 rounded text-center">
-                <p className="text-xs md:text-sm text-blue-600 font-medium">
+              <div
+                className="p-2 md:p-3 rounded text-center"
+                style={{ backgroundColor: "#F5F5F5" }}
+              >
+                <p
+                  className="text-xs md:text-sm font-medium"
+                  style={{ color: "#848E9C" }}
+                >
                   IMO
                 </p>
-                <p className="text-sm md:text-base font-bold">
+                <p
+                  className="text-sm md:text-base font-bold"
+                  style={{ color: "#1E2026" }}
+                >
                   {vessels[activeTab].details.IMO}
                 </p>
               </div>
@@ -187,12 +221,18 @@ function Pricing() {
 
           {/* Vessel Specifications - More compact for all screens */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-lg shadow overflow-hidden">
-              <div className="bg-blue-600 text-white p-3">
+            <div
+              className="bg-white rounded-lg shadow overflow-hidden"
+              style={{ border: "1px solid #E6E8EA" }}
+            >
+              <div
+                className="p-3"
+                style={{ backgroundColor: "#222126", color: "#FFFFFF" }}
+              >
                 <h3 className="text-base md:text-lg font-bold">
                   Vessel Specifications
                 </h3>
-                <p className="text-blue-100 text-xs md:text-sm">
+                <p className="text-xs md:text-sm" style={{ color: "#848E9C" }}>
                   Detailed technical information
                 </p>
               </div>
@@ -203,16 +243,22 @@ function Pricing() {
                     key={idx}
                     className="p-2 md:p-3 hover:bg-gray-50 transition-colors duration-200"
                   >
-                    <div className="flex items-start gap-2">
-                      <div className="p-1.5 bg-blue-50 rounded-full text-blue-600 hidden sm:block">
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="p-1.5 rounded-full hidden sm:block"
+                        style={{ backgroundColor: "#F5F5F5", color: "#F0B90B" }}
+                      >
                         {spec.icon}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-xs md:text-sm font-medium text-gray-500">
+                        <h4
+                          className="text-xs md:text-sm font-medium"
+                          style={{ color: "#848E9C" }}
+                        >
                           {spec.name}
                         </h4>
                         <p
-                          className="text-sm md:text-base font-semibold text-gray-800 break-words"
+                          className="text-sm md:text-base font-semibold break-words"
                           style={{ marginBottom: "0px" }}
                         >
                           {vessels[activeTab].details[
