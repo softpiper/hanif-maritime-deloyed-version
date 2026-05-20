@@ -3,75 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --ds-yellow: #f0b90b;
-  --ds-gold: #ffd000;
-  --ds-gold-light: #f8d12f;
-  --ds-active-yellow: #d0980b;
-  --ds-focus-blue: #1eaedb;
+  --ds-yellow: #1eaedb;
+  --ds-gold: #4cc0ea;
+  --ds-gold-light: #8bdcf9;
+  --ds-active-yellow: #168bb8;
+  --ds-focus-blue: #1b7ea7;
   --ds-white: #ffffff;
-  --ds-snow: #f5f5f5;
-  --ds-dark: #222126;
-  --ds-dark-card: #2b2f36;
-  --ds-ink: #1e2026;
-  --ds-text: #1e2026;
-  --ds-text-secondary: #32313a;
-  --ds-slate: #848e9c;
-  --ds-steel: #686a6c;
-  --ds-muted: #777e90;
-  --ds-border: #e6e8ea;
+  --ds-snow: #f5f9fc;
+  --ds-dark: #1f3346;
+  --ds-dark-card: #274055;
+  --ds-ink: #16202b;
+  --ds-text: #16202b;
+  --ds-text-secondary: #334155;
+  --ds-slate: #66758b;
+  --ds-steel: #5f7287;
+  --ds-muted: #74859a;
+  --ds-border: #d9e5ef;
   --ds-green: #0ecb81;
   --ds-red: #f6465d;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 218 11% 14%;
+    --background: 205 43% 98%;
+    --foreground: 214 37% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 218 11% 14%;
+    --card-foreground: 214 37% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 218 11% 14%;
-    --primary: 46 92% 49%;
-    --primary-foreground: 218 11% 14%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 218 11% 14%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 0 0% 96%;
-    --accent-foreground: 218 11% 14%;
+    --popover-foreground: 214 37% 14%;
+    --primary: 196 76% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 205 33% 96%;
+    --secondary-foreground: 214 37% 14%;
+    --muted: 205 33% 96%;
+    --muted-foreground: 215 18% 47%;
+    --accent: 205 33% 96%;
+    --accent-foreground: 214 37% 14%;
     --destructive: 355 92% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 91%;
-    --input: 220 10% 91%;
-    --ring: 196 76% 49%;
-    --chart-1: 160 60% 45%;
+    --border: 205 31% 88%;
+    --input: 205 31% 88%;
+    --ring: 196 76% 50%;
+    --chart-1: 196 76% 50%;
     --chart-2: 355 92% 63%;
-    --chart-3: 46 92% 49%;
+    --chart-3: 205 33% 42%;
     --chart-4: 196 76% 49%;
     --chart-5: 220 10% 91%;
     --radius: 0.75rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
+    --background: 214 37% 12%;
+    --foreground: 205 43% 98%;
+    --card: 214 37% 16%;
+    --card-foreground: 205 43% 98%;
+    --popover: 214 37% 16%;
+    --popover-foreground: 205 43% 98%;
+    --primary: 196 76% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 26% 22%;
+    --secondary-foreground: 205 43% 98%;
+    --muted: 214 26% 22%;
+    --muted-foreground: 214 16% 68%;
+    --accent: 214 26% 22%;
+    --accent-foreground: 205 43% 98%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 205 43% 98%;
+    --border: 214 24% 25%;
+    --input: 214 24% 25%;
+    --ring: 196 76% 50%;
+    --chart-1: 196 76% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
@@ -88,17 +88,18 @@
     font-family: "BinancePlex", Arial, sans-serif;
     color: var(--ds-text);
     background-color: var(--ds-white);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f4f8fb 100%);
   }
 }
 
 @layer components {
   .ds-section-light {
-    background-color: var(--ds-white);
+    background-color: #f7fbfe;
     color: var(--ds-text);
   }
 
   .ds-section-dark {
-    background-color: var(--ds-dark);
+    background: linear-gradient(135deg, #274055 0%, #1f3346 100%);
     color: var(--ds-white);
   }
 
@@ -153,26 +154,27 @@
     background-color: var(--ds-white);
     border: 1px solid var(--ds-border);
     border-radius: 12px;
-    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+    box-shadow: rgba(15, 42, 63, 0.06) 0px 3px 5px 0px;
     transition: box-shadow 200ms ease;
   }
 
   .ds-card:hover {
-    box-shadow: rgba(8, 8, 8, 0.05) 0px 3px 5px 5px;
+    box-shadow: rgba(15, 42, 63, 0.08) 0px 8px 22px -10px;
   }
 
   .ds-card-dark {
     background-color: var(--ds-dark-card);
     border-radius: 12px;
-    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+    box-shadow: rgba(15, 42, 63, 0.08) 0px 3px 5px 0px;
   }
 
   .ds-panel {
-    background-color: var(--ds-white);
+    background-color: rgba(255, 255, 255, 0.88);
     border: 1px solid var(--ds-border);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: rgba(32, 32, 37, 0.05) 0px 3px 5px 0px;
+    box-shadow: rgba(15, 42, 63, 0.06) 0px 3px 5px 0px;
+    backdrop-filter: blur(10px);
   }
 
   .ds-stats {
@@ -200,7 +202,7 @@
   }
 
   .ds-nav-link:hover {
-    color: #1a1a1a;
+    color: var(--ds-yellow);
   }
 
   .ds-nav-link.active {
@@ -209,7 +211,7 @@
 
   .ds-nav-cta {
     background-color: var(--ds-yellow);
-    color: var(--ds-ink);
+    color: var(--ds-white);
     border-radius: 50px;
     padding: 6px 20px;
     font-weight: 600;

@@ -20,7 +20,10 @@ export default function Home() {
                 <h1 className="ds-hero-title text-white mb-3">
                   Hanif Maritime Limited
                 </h1>
-                <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+                <p
+                  className="ds-hero-subtitle"
+                  style={{ color: "var(--ds-slate)" }}
+                >
                   HANIF MARITIME LIMITED (HML) was established on 07th September
                   2021 as a sister concern of HANIF GROUP, specializing in the
                   transportation of dry bulk cargoes with International business
@@ -35,9 +38,9 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6">
-              <div
+              {/* <div
                 className="position-relative overflow-hidden"
-                style={{ borderRadius: "24px", border: "1px solid #2B2F36" }}
+                style={{ borderRadius: "24px", border: "1px solid #d9e5ef" }}
               >
                 <video autoPlay muted loop playsInline className="w-100 h-auto">
                   <source
@@ -46,7 +49,7 @@ export default function Home() {
                   />
                   Your browser does not support HTML5 video.
                 </video>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

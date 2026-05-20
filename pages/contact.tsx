@@ -8,7 +8,10 @@ const contact = () => {
         <div className="container">
           <div className="text-white text-center">
             <h3 className="ds-hero-title text-white">Contact Us</h3>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               We are here to assist you with any inquiries or support you may
               need. Reach out to us through the following contact details, and
               our team will be more than happy to help.Feel free to get in touch
@@ -28,19 +31,21 @@ const contact = () => {
                   <li>
                     <i
                       className="fa-solid fa-location-dot"
-                      style={{ color: "#F0B90B" }}
+                      style={{ color: "#1EAEDB" }}
                     />
                     <span
                       style={{
                         marginLeft: "10px",
-                        color: "#1E2026",
+                        color: "#16202B",
                         fontWeight: 600,
                       }}
                     >
                       Head Office:{" "}
                     </span>
                     <br />
-                    <span style={{ marginLeft: "10px", color: "#848E9C" }}>
+                    <span
+                      style={{ marginLeft: "10px", color: "var(--ds-slate)" }}
+                    >
                       House # 86,Level # 3 Road # 14, Block # B, Banani,
                       Dhaka-1213
                     </span>
@@ -48,19 +53,21 @@ const contact = () => {
                   <li>
                     <i
                       className="fa-solid fa-location-dot"
-                      style={{ color: "#F0B90B" }}
+                      style={{ color: "#1EAEDB" }}
                     />
                     <span
                       style={{
                         marginLeft: "10px",
-                        color: "#1E2026",
+                        color: "#16202B",
                         fontWeight: 600,
                       }}
                     >
                       Corporate Office:{" "}
                     </span>
                     <br />
-                    <span style={{ marginLeft: "10px", color: "#848E9C" }}>
+                    <span
+                      style={{ marginLeft: "10px", color: "var(--ds-slate)" }}
+                    >
                       73/1, Hrishikesh Das road, Narinda, Dholaikhal, Dhaka-1100
                     </span>
                   </li>
@@ -69,11 +76,11 @@ const contact = () => {
                     <a
                       href="tel:880255033661"
                       className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#32313A" }}
+                      style={{ color: "#334155" }}
                     >
                       <i
                         className="fa-solid fa-phone"
-                        style={{ color: "#F0B90B" }}
+                        style={{ color: "#1EAEDB" }}
                       />
                       <span>+880255033661</span>
                     </a>
@@ -82,11 +89,11 @@ const contact = () => {
                     <a
                       href="mailto:operation.hml@hanif-group.com"
                       className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#32313A" }}
+                      style={{ color: "#334155" }}
                     >
                       <i
                         className="fa-solid fa-envelope-open-text"
-                        style={{ color: "#F0B90B" }}
+                        style={{ color: "#1EAEDB" }}
                       />
                       <span>operation.hml@hanif-group.com</span>
                     </a>
@@ -95,7 +102,7 @@ const contact = () => {
                     <a
                       href="mailto:technical.hml@hanif-group.com"
                       className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#32313A" }}
+                      style={{ color: "#334155" }}
                     >
                       <span>technical.hml@hanif-group.com</span>
                     </a>
@@ -104,7 +111,7 @@ const contact = () => {
                     <a
                       href="mailto:chartering.hml@hanif-group.com"
                       className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#32313A" }}
+                      style={{ color: "#334155" }}
                     >
                       <span>chartering.hml@hanif-group.com</span>
                     </a>

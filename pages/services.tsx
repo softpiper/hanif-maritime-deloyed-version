@@ -10,7 +10,10 @@ const index = () => {
         <div className="container">
           <div className="text-white text-center">
             <h3 className="ds-hero-title text-white">Services</h3>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               Hanif Maritime Ltd aims to expand its fleet with next-generation
               eco-friendly vessels and explore new markets to enhance our
               service offerings. We are committed to leveraging technological

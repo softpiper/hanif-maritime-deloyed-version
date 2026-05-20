@@ -105,13 +105,13 @@ function Pricing() {
           <Badge className="px-3 py-1 text-sm md:text-base">Our Fleet</Badge>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-2xl"
-            style={{ color: "#1E2026" }}
+            style={{ color: "#16202B" }}
           >
             Explore Our Modern Vessel Fleet
           </h2>
           <p
             className="text-sm md:text-base max-w-2xl"
-            style={{ color: "#848E9C" }}
+            style={{ color: "var(--ds-slate)" }}
           >
             Our fleet combines cutting-edge technology with superior
             craftsmanship for safe and efficient global transportation.
@@ -126,13 +126,13 @@ function Pricing() {
               onClick={() => setActiveTab(index)}
               className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm transition-all duration-300 flex items-center gap-1 border ${
                 activeTab === index
-                  ? "bg-[#F0B90B] text-[#1E2026] border-[#F0B90B]"
-                  : "bg-white hover:bg-gray-100 text-[#32313A] border-[#E6E8EA]"
+                  ? "bg-[#1EAEDB] text-[#FFFFFF] border-[#1EAEDB]"
+                  : "bg-white hover:bg-gray-100 text-[#334155] border-[#E6E8EA]"
               }`}
             >
               <Ship
                 className={`w-4 h-4 ${
-                  activeTab === index ? "text-[#1E2026]" : "text-[#F0B90B]"
+                  activeTab === index ? "text-[#FFFFFF]" : "text-[#1EAEDB]"
                 }`}
               />
               <span className="font-medium">
@@ -246,14 +246,14 @@ function Pricing() {
                     <div className="flex items-start gap-3">
                       <div
                         className="p-1.5 rounded-full hidden sm:block"
-                        style={{ backgroundColor: "#F5F5F5", color: "#F0B90B" }}
+                        style={{ backgroundColor: "#F5F5F5", color: "#1EAEDB" }}
                       >
                         {spec.icon}
                       </div>
                       <div className="flex-1">
                         <h4
                           className="text-xs md:text-sm font-medium"
-                          style={{ color: "#848E9C" }}
+                          style={{ color: "#66758B" }}
                         >
                           {spec.name}
                         </h4>

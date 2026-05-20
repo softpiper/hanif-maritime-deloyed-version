@@ -5,7 +5,7 @@ const ServiceDetails = () => {
     <section className="isotop-section ds-section-dark">
       <div
         className="d-flex justify-content-between flex-wrap py-30 ps-20 pe-4 mb-20"
-        style={{ backgroundColor: "#222126" }}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.08)" }}
       >
         <h2 className="text-white mb-0">SERVICES WE PROVIDE</h2>
       </div>

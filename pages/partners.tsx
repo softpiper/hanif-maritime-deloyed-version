@@ -21,7 +21,7 @@ const Partners = () => {
             </motion.h2>
             <motion.p
               className="ds-hero-subtitle mx-auto"
-              style={{ maxWidth: "700px", color: "#848E9C" }}
+              style={{ maxWidth: "700px", color: "var(--ds-slate)" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}

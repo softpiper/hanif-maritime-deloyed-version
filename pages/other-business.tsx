@@ -9,7 +9,10 @@ const OtherBusiness = () => {
         <div className="container">
           <div className="text-white text-center">
             <h3 className="ds-hero-title text-white">Our Business Units</h3>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               At Hanif Group, we pride ourselves on our diverse range of
               business ventures, each driven by a commitment to excellence,
               innovation, and quality. Our portfolio spans various industries,

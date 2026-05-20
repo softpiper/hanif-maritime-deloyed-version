@@ -49,23 +49,27 @@ const index = () => {
 
               <div
                 className="w-24 h-1 mx-auto mb-8"
-                style={{ backgroundColor: "#F0B90B" }}
+                style={{ backgroundColor: "#1EAEDB" }}
               ></div>
 
               <h3
                 className="text-xl md:text-2xl mb-8 font-light"
-                style={{ color: "#848E9C" }}
+                style={{ color: "#C9D7E4" }}
               >
                 Modern Vessels for Global Shipping Solutions
               </h3>
 
               <div
                 className="p-6 rounded-lg"
-                style={{ backgroundColor: "#2B2F36" }}
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
+                  backdropFilter: "blur(10px)",
+                }}
               >
                 <p
                   className="text-gray-100 text-lg leading-relaxed mb-6"
-                  style={{ color: "#FFFFFF" }}
+                  style={{ color: "#F7FBFE" }}
                 >
                   Hanif Maritime Limited operates a modern and diverse fleet of
                   dry bulk carriers. Each ship is equipped with the latest
@@ -78,7 +82,7 @@ const index = () => {
                 <div className="flex items-center justify-center gap-4 mb-2">
                   <div
                     className="h-10 w-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#F0B90B" }}
+                    style={{ backgroundColor: "#1EAEDB" }}
                   >
                     <span className="text-white font-bold">3</span>
                   </div>
@@ -90,7 +94,7 @@ const index = () => {
                 <div className="flex items-center justify-center gap-4">
                   <div
                     className="h-10 w-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#FFD000" }}
+                    style={{ backgroundColor: "#4CC0EA" }}
                   >
                     <span className="text-gray-900 font-bold">+</span>
                   </div>
@@ -106,7 +110,7 @@ const index = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-3 ds-pill"
-                    style={{ backgroundColor: "#F0B90B", color: "#1E2026" }}
+                    style={{ backgroundColor: "#1EAEDB", color: "#FFFFFF" }}
                   >
                     Explore Our Fleet
                   </motion.button>

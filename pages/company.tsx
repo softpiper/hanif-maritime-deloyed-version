@@ -13,10 +13,16 @@ const CompanyPage = () => {
             <h1 className="ds-hero-title text-white">
               Company Profile: HANIF MARITIME LTD
             </h1>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               Industry: Maritime Transport
             </p>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               Specialization: Dry Bulk Shipping
             </p>
           </div>

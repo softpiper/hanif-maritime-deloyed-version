@@ -10,7 +10,10 @@ const Gallery = () => {
           <div className="text-white text-center">
             {/* <Hero2 /> */}
             <h3 className="ds-hero-title text-white">OCEAN GOING VESSELS</h3>
-            <p className="ds-hero-subtitle" style={{ color: "#848E9C" }}>
+            <p
+              className="ds-hero-subtitle"
+              style={{ color: "var(--ds-slate)" }}
+            >
               Our gallery showcases the impressive range of vessels that form
               the backbone of our shipping operations. From bulk carriers to
               tankers, each ship is equipped with advanced technology and

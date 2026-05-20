@@ -22,7 +22,10 @@ const Header = () => {
       id="navbar_top"
       className="transparent-header position-fixed"
       style={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "rgba(255, 255, 255, 0.92)",
+        backdropFilter: "blur(14px)",
+        boxShadow: "0 8px 30px rgba(15, 42, 63, 0.08)",
+        borderBottom: "1px solid #d9e5ef",
         width: "100%",
         top: 0,
         left: 0,
@@ -30,10 +33,7 @@ const Header = () => {
       }}
     >
       <div className="container">
-        <nav
-          className="navbar navbar-expand-lg py-3 py-lg-0 border-bottom"
-          style={{ borderColor: "#E6E8EA" }}
-        >
+        <nav className="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
           <Link className=" site-logo navbar-brand" href="/" rel="home">
             <Image
               className="logo-dark"
@@ -51,12 +51,12 @@ const Header = () => {
             />
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler border-0 shadow-none"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#main_nav"
             aria-controls="main_nav"
-            style={{ backgroundColor: "#1E2026" }}
+            style={{ backgroundColor: "transparent" }}
           >
             <span className="navbar-toggler-icon" />
           </button>
@@ -70,10 +70,9 @@ const Header = () => {
               <div className="offcanvas-header px-0 justify-content-end">
                 <button
                   type="button"
-                  className="btn-close btn-close-dark"
+                  className="btn-close"
                   data-bs-dismiss="offcanvas"
                   aria-label="Close"
-                  style={{ backgroundColor: "#1E2026" }}
                 />
               </div>
 
@@ -90,7 +89,7 @@ const Header = () => {
                       style={
                         item.label === "Contact"
                           ? undefined
-                          : { color: "#32313A" }
+                          : { color: "#334155" }
                       }
                     >
                       {item.label === "Contact" ? (
