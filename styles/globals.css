@@ -247,4 +247,9 @@
     color: var(--ds-ink);
     border-color: var(--ds-yellow) var(--ds-yellow) var(--ds-white);
   }
+
+  .navbar-light .offcanvas.show .navbar-nav .nav-link,
+  .navbar-light .offcanvas.showing .navbar-nav .nav-link {
+    color: var(--ds-text-secondary) !important;
+  }
 }
