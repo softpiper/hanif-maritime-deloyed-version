@@ -6,14 +6,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import MapSection from "./components/MapSection";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  ShieldCheck,
-  Ship,
-  Globe2,
-} from "lucide-react";
+import { ArrowRight, ShieldCheck, Ship, Globe2 } from "lucide-react";
 
 const heroSlides = [
   {
@@ -48,20 +41,6 @@ export default function Home() {
 
     return () => window.clearInterval(timer);
   }, [heroSlides.length]);
-
-  const goToSlide = (index: number) => {
-    setActiveSlide(index);
-  };
-
-  const previousSlide = () => {
-    setActiveSlide(
-      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
-    );
-  };
-
-  const nextSlide = () => {
-    setActiveSlide((current) => (current + 1) % heroSlides.length);
-  };
 
   return (
     <Wrapper>
@@ -181,33 +160,6 @@ export default function Home() {
                       </motion.div>
                     </AnimatePresence>
 
-                    <button
-                      type="button"
-                      onClick={previousSlide}
-                      aria-label="Previous image"
-                      className="position-absolute top-50 start-0 translate-middle-y ms-3 d-inline-flex align-items-center justify-content-center bg-black/50 backdrop-blur-md border border-white/10 text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "999px",
-                      }}
-                    >
-                      <ChevronLeft size={18} />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={nextSlide}
-                      aria-label="Next image"
-                      className="position-absolute top-50 end-0 translate-middle-y me-3 d-inline-flex align-items-center justify-content-center bg-black/50 backdrop-blur-md border border-white/10 text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "999px",
-                      }}
-                    >
-                      <ChevronRight size={18} />
-                    </button>
-
                     {/* Dark gradient overlay */}
                     <div
                       className="position-absolute bottom-0 start-0 end-0 p-4"
@@ -246,7 +198,7 @@ export default function Home() {
                         <button
                           key={slide.src}
                           type="button"
-                          onClick={() => goToSlide(index)}
+                          onClick={() => setActiveSlide(index)}
                           aria-label={`Go to slide ${index + 1}`}
                           className="border-0 p-0 bg-transparent"
                           style={{
