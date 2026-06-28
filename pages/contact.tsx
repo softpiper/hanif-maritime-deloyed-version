@@ -7,7 +7,7 @@ const contact = () => {
       <section className="ds-section-dark ds-hero">
         <div className="container">
           <div className="text-white text-center">
-            <h3 className="ds-hero-title text-white">Contact Us</h3>
+            <h3 className="ds-hero-title text-white">CONTACT US</h3>
             <p
               className="ds-hero-subtitle"
               style={{ color: "var(--ds-slate)" }}
@@ -74,7 +74,7 @@ const contact = () => {
 
                   <li>
                     <a
-                      href="tel:880255033661"
+                      href="tel:880255033662"
                       className="text-decoration-none d-flex gap-2"
                       style={{ color: "#334155" }}
                     >
@@ -82,29 +82,7 @@ const contact = () => {
                         className="fa-solid fa-phone"
                         style={{ color: "#1EAEDB" }}
                       />
-                      <span>+880255033661</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:operation.hml@hanif-group.com"
-                      className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#334155" }}
-                    >
-                      <i
-                        className="fa-solid fa-envelope-open-text"
-                        style={{ color: "#1EAEDB" }}
-                      />
-                      <span>operation.hml@hanif-group.com</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:technical.hml@hanif-group.com"
-                      className="text-decoration-none d-flex gap-2"
-                      style={{ color: "#334155" }}
-                    >
-                      <span>technical.hml@hanif-group.com</span>
+                      <span>+880255033662</span>
                     </a>
                   </li>
                   <li>
@@ -113,6 +91,10 @@ const contact = () => {
                       className="text-decoration-none d-flex gap-2"
                       style={{ color: "#334155" }}
                     >
+                      <i
+                        className="fa-solid fa-envelope-open-text"
+                        style={{ color: "#1EAEDB" }}
+                      />
                       <span>chartering.hml@hanif-group.com</span>
                     </a>
                   </li>
@@ -126,7 +108,7 @@ const contact = () => {
                   style={{ marginBottom: "16px" }}
                 >
                   <p className="ds-section-kicker">Locations</p>
-                  <h3 className="ds-section-title">Our Offices</h3>
+                  <h3 className="ds-section-title">OUR OFFICES</h3>
                 </div>
                 <nav>
                   <div className="nav nav-tabs" id="nav-tab" role="tablist">

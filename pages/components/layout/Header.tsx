@@ -76,9 +76,9 @@ const Header = () => {
                 />
               </div>
 
-              <ul className="navbar-nav ms-lg-auto">
+              <ul className="navbar-nav ms-lg-auto gap-2 gap-lg-3 align-items-lg-center">
                 {navItems.map((item) => (
-                  <li key={item.path} className="nav-item dropdown">
+                  <li key={item.path} className="nav-item dropdown px-lg-1">
                     <Link
                       className={
                         router.pathname === item.path
