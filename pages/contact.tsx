@@ -150,7 +150,7 @@ const contact = () => {
                     <div>
                       <iframe
                         className="w-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645.5513484633101!2d90.36603434816318!3d23.7548708855554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bfe7a8762d9b%3A0x575459e5dc5cb81d!2sbanani!5e0!3m2!1sen!2sbd!4v1724608130731!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3650.6595723788027!2d90.40003207533731!3d23.795133978639907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDQ3JzQyLjUiTiA5MMKwMjQnMDkuNCJF!5e0!3m2!1sen!2sbd!4v1782650506318!5m2!1sen!2sbd"
                         height="350"
                         style={{ border: 0 }}
                         allowFullScreen={true}
