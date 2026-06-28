@@ -1,28 +1,38 @@
 import React from "react";
 import Wrapper from "./components/layout/Wrapper";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Gallery = () => {
   return (
     <Wrapper>
-      <section className="ds-section-dark ds-hero">
-        <div className="container">
+      <section className="ds-section-dark position-relative overflow-hidden ds-hero">
+        <div className="container position-relative" style={{ zIndex: 1 }}>
           <div className="text-white text-center">
-            {/* <Hero2 /> */}
-            <h3 className="ds-hero-title text-white">OCEAN GOING VESSELS</h3>
-            <p
-              className="ds-hero-subtitle"
-              style={{ color: "var(--ds-slate)" }}
+            <motion.h2
+              className="ds-hero-title text-white mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              OCEAN GOING VESSELS
+            </motion.h2>
+            <motion.p
+              className="ds-hero-subtitle mx-auto"
+              style={{ maxWidth: "700px", color: "var(--ds-slate)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               Our gallery showcases the impressive range of vessels that form
               the backbone of our shipping operations. From bulk carriers to
               tankers, each ship is equipped with advanced technology and
               maintained to the highest standards of safety and efficiency.
-              These vessels are the lifeblood of our business, ensuring timely
+              These vessels are the lifeline of our business, ensuring timely
               and secure transport of goods across the world&apos;s oceans. Take
               a closer look at our fleet and see the powerful ships that help us
               connect markets and deliver excellence in maritime logistics.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>

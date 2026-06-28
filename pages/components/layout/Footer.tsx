@@ -97,7 +97,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="tel:880255033661"
+                  href="tel:880255033662"
                   className="text-decoration-none d-flex gap-2"
                   style={{ color: "#b7c8d8" }}
                 >
@@ -105,12 +105,13 @@ const Footer = () => {
                     className="fa-solid fa-phone"
                     style={{ color: "#1EAEDB" }}
                   />
-                  <span>+880255033661</span>
+                  <span>+880255033662</span>
                 </a>
               </li>
+
               <li>
                 <a
-                  href="mailto:operation.hml@hanif-group.com"
+                  href="mailto:chartering.hml@hanif-group.com"
                   className="text-decoration-none d-flex gap-2"
                   style={{ color: "#b7c8d8" }}
                 >
@@ -118,26 +119,6 @@ const Footer = () => {
                     className="fa-solid fa-envelope-open-text"
                     style={{ color: "#1EAEDB" }}
                   />
-                  <span>operation.hml@hanif-group.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:technical.hml@hanif-group.com"
-                  className="text-decoration-none d-flex gap-2"
-                  style={{ color: "var(--ds-slate)" }}
-                >
-                  {/* <i className="fa-solid fa-envelope-open-text text-primary" /> */}
-                  <span>technical.hml@hanif-group.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:chartering.hml@hanif-group.com"
-                  className="text-decoration-none d-flex gap-2"
-                  style={{ color: "var(--ds-slate)" }}
-                >
-                  {/* <i className="fa-solid fa-envelope-open-text text-primary" /> */}
                   <span>chartering.hml@hanif-group.com</span>
                 </a>
               </li>

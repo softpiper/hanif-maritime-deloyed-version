@@ -3,31 +3,35 @@ import Wrapper from "./components/layout/Wrapper";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const CompanyPage = () => {
   return (
     <Wrapper>
-      <section className="ds-section-dark ds-hero">
-        <div className="container">
-          <div className="row align-items-center">
-            <h1 className="ds-hero-title text-white">
-              Company Profile: HANIF MARITIME LTD
-            </h1>
-            <p
-              className="ds-hero-subtitle"
-              style={{ color: "var(--ds-slate)" }}
+      <section className="ds-section-dark position-relative overflow-hidden ds-hero">
+        <div className="container position-relative" style={{ zIndex: 1 }}>
+          <div className="text-white text-center">
+            <motion.h2
+              className="ds-hero-title text-white mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Industry: Maritime Transport
-            </p>
-            <p
-              className="ds-hero-subtitle"
-              style={{ color: "var(--ds-slate)" }}
+              COMPANY PROFILE
+            </motion.h2>
+            <motion.p
+              className="ds-hero-subtitle mx-auto"
+              style={{ maxWidth: "700px", color: "var(--ds-slate)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               Specialization: Dry Bulk Shipping
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
+
       <section className="work-process-section py-60 ds-section-light">
         <div className="container">
           <div className="row gx-5 gy-30">
@@ -84,10 +88,10 @@ const CompanyPage = () => {
                     <div className="row">
                       <p>
                         To be a global leader and the most trusted and reliable
-                        dry bulk shipping partner in shipping, providing
-                        unparalleled service and innovative solutions to our
-                        clients, while maintaining the highest standards of
-                        safety and environmental stewardship.
+                        dry bulk shipping partner, providing unparalleled
+                        service and innovative solutions to our clients, while
+                        maintaining the highest standards of safety and
+                        environmental stewardship.
                       </p>
                     </div>
                   </div>
@@ -209,7 +213,7 @@ const CompanyPage = () => {
               <div className="">
                 <div className="flex flex-row justify-between">
                   <h2 className="text-underline-sm pb-3 mb-3">
-                    <span className="text-primary pe-2">What</span> We Are
+                    <span className="text-primary pe-2">Who</span> We Are
                   </h2>
                   <Link
                     href="https://drive.google.com/file/d/1EH9jsnxZBYm-rXIF8TGogLyCkY8cxq7F/view?usp=drive_link"

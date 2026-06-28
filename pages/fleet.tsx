@@ -1,5 +1,3 @@
-import Link from "next/link";
-import React from "react";
 import Wrapper from "./components/layout/Wrapper";
 import Image from "next/image";
 import PricingDemo from "./components/ShipsComparison";
@@ -10,7 +8,7 @@ const index = () => {
     <Wrapper>
       <section
         className="relative overflow-hidden ds-section-dark"
-        style={{ minHeight: "60vh" }}
+        style={{ minHeight: "50vh" }}
       >
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -36,31 +34,31 @@ const index = () => {
         </div>
 
         <div className="container relative z-10">
-          <div className="flex flex-col items-center justify-center min-h-[60vh] py-16 px-4">
+          <div className="flex flex-col items-center justify-center min-h-[50vh] py-12 px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center max-w-4xl mx-auto"
+              className="text-center max-w-3xl mx-auto"
             >
-              <h1 className="text-white text-4xl md:text-5xl font-bold mb-6 tracking-wide">
+              <h1 className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-wide">
                 OUR FLEET
               </h1>
 
               <div
-                className="w-24 h-1 mx-auto mb-8"
+                className="w-20 h-1 mx-auto mb-5"
                 style={{ backgroundColor: "#1EAEDB" }}
               ></div>
 
               <h3
-                className="text-xl md:text-2xl mb-8 font-light"
+                className="text-lg md:text-xl mb-5 font-light"
                 style={{ color: "#C9D7E4" }}
               >
                 Modern Vessels for Global Shipping Solutions
               </h3>
 
               <div
-                className="p-6 rounded-lg"
+                className="p-4 md:p-5 rounded-2xl"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.1)",
                   border: "1px solid rgba(255, 255, 255, 0.16)",
@@ -68,53 +66,47 @@ const index = () => {
                 }}
               >
                 <p
-                  className="text-gray-100 text-lg leading-relaxed mb-6"
+                  className="text-gray-100 text-sm md:text-base leading-relaxed mb-4"
                   style={{ color: "#F7FBFE" }}
                 >
-                  Hanif Maritime Limited operates a modern and diverse fleet of
-                  dry bulk carriers. Each ship is equipped with the latest
-                  technology to ensure optimal performance, safety, and
-                  environmental compliance. Our goal is to continue to grow our
-                  fleet size over time to establish a world reputed shipping
-                  company.
+                  Hanif Maritime Limited operates a focused fleet of dry bulk
+                  carriers built for performance, safety, and reliable global
+                  service.
                 </p>
 
-                <div className="flex items-center justify-center gap-4 mb-2">
-                  <div
-                    className="h-10 w-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#1EAEDB" }}
-                  >
-                    <span className="text-white font-bold">3</span>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <div className="px-3 py-2 rounded-full bg-sky-500/15 border border-sky-400/25 text-white d-flex align-items-center gap-2">
+                    <span
+                      className="inline-flex items-center justify-center rounded-full text-xs font-bold"
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        backgroundColor: "#1EAEDB",
+                      }}
+                    >
+                      3
+                    </span>
+                    <span className="text-sm md:text-base">
+                      Supramax vessels in operation
+                    </span>
                   </div>
-                  <p className="text-white text-lg">
-                    Supramax vessels currently in operation
-                  </p>
-                </div>
 
-                <div className="flex items-center justify-center gap-4">
-                  <div
-                    className="h-10 w-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#4CC0EA" }}
-                  >
-                    <span className="text-gray-900 font-bold">+</span>
+                  <div className="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-white d-flex align-items-center gap-2">
+                    <span
+                      className="inline-flex items-center justify-center rounded-full text-xs font-bold text-gray-900"
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        backgroundColor: "#4CC0EA",
+                      }}
+                    >
+                      +
+                    </span>
+                    <span className="text-sm md:text-base">
+                      More vessels in the pipeline
+                    </span>
                   </div>
-                  <p className="text-white text-lg">
-                    Additional vessels in the pipeline
-                  </p>
                 </div>
-              </div>
-
-              <div className="mt-12">
-                <Link href="#fleet-details">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 ds-pill"
-                    style={{ backgroundColor: "#1EAEDB", color: "#FFFFFF" }}
-                  >
-                    Explore Our Fleet
-                  </motion.button>
-                </Link>
               </div>
             </motion.div>
           </div>

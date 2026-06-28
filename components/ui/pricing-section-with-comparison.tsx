@@ -1,274 +1,258 @@
 import {
-  Check,
   Anchor,
-  Ship,
-  Info,
-  Ruler,
   Flag,
-  Scale,
+  Info,
   Navigation,
+  Ruler,
+  Scale,
+  Ship,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
 
+type VesselDetailKey =
+  | "IMO"
+  | "EX_NAME"
+  | "DWT"
+  | "TYPE_OF_VESSEL"
+  | "YEAR_OF_BUILD"
+  | "FLAG"
+  | "DIMENSIONS"
+  | "GRT_NRT"
+  | "TPC";
+
+type VesselDetails = Record<VesselDetailKey, string>;
+
+const vessels: {
+  name: string;
+  image: string;
+  details: VesselDetails;
+}[] = [
+  {
+    name: "MV ZARAAR HANIF",
+    image: "/assets/images/ship/image_51.jpg",
+    details: {
+      IMO: "9454187",
+      EX_NAME: "NORD TRUST",
+      DWT: "55,693 MT ON 12.573 M DRAFT",
+      TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
+      YEAR_OF_BUILD: "2009",
+      FLAG: "BANGLADESH",
+      DIMENSIONS:
+        "LOA / LBP: 189.990 / 182.0 M BEAM / DEPTH: 32.26 M / 17.90 M",
+      GRT_NRT: "31,232 / 18,516",
+      TPC: "55.8",
+    },
+  },
+  {
+    name: "MV RUBAIYAT HANIF",
+    image: "/assets/images/ship/image_41.jpg",
+    details: {
+      IMO: "9403047",
+      EX_NAME: "NEW VICTORY",
+      DWT: "58,713 MT ON 12.828M SSW",
+      TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
+      YEAR_OF_BUILD: "2008",
+      FLAG: "BANGLADESH",
+      DIMENSIONS: "LOA / BEAM / TPC: 189.99 M / 32.26M / 57.54 MT",
+      GRT_NRT: "32,379/19,353",
+      TPC: "57.54",
+    },
+  },
+  {
+    name: "MV GUL BANO",
+    image: "/assets/images/ship/image_20.jpeg",
+    details: {
+      IMO: "9425899",
+      EX_NAME: "ROYAL SAMURAI",
+      DWT: "58,091 MT ON 12.826 M DRAFT",
+      TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
+      YEAR_OF_BUILD: "2010",
+      FLAG: "BANGLADESH",
+      DIMENSIONS:
+        "LOA / LBP: 189.990 / 185.6 M BEAM / DEPTH: 32.26 M / 18.00 M",
+      GRT_NRT: "32,351 / 19,458",
+      TPC: "57.46",
+    },
+  },
+];
+
+const specs: {
+  label: string;
+  key: VesselDetailKey;
+  icon: JSX.Element;
+}[] = [
+  { label: "IMO", key: "IMO", icon: <Info className="w-4 h-4" /> },
+  { label: "Ex Name", key: "EX_NAME", icon: <Ship className="w-4 h-4" /> },
+  { label: "DWT", key: "DWT", icon: <Scale className="w-4 h-4" /> },
+  {
+    label: "Type",
+    key: "TYPE_OF_VESSEL",
+    icon: <Ship className="w-4 h-4" />,
+  },
+  {
+    label: "Year",
+    key: "YEAR_OF_BUILD",
+    icon: <Anchor className="w-4 h-4" />,
+  },
+  { label: "Flag", key: "FLAG", icon: <Flag className="w-4 h-4" /> },
+  {
+    label: "Dimensions",
+    key: "DIMENSIONS",
+    icon: <Ruler className="w-4 h-4" />,
+  },
+  {
+    label: "GRT / NRT",
+    key: "GRT_NRT",
+    icon: <Navigation className="w-4 h-4" />,
+  },
+  { label: "TPC", key: "TPC", icon: <Scale className="w-4 h-4" /> },
+];
+
 function Pricing() {
   const [activeTab, setActiveTab] = useState(0);
-
-  type VesselDetailKey =
-    | "IMO"
-    | "EX_NAME"
-    | "DWT"
-    | "TYPE_OF_VESSEL"
-    | "YEAR_OF_BUILD"
-    | "FLAG"
-    | "DIMENSIONS"
-    | "GRT_NRT"
-    | "TPC";
-
-  type VesselDetails = Record<VesselDetailKey, string>;
-
-  const vessels: {
-    name: string;
-    image: string;
-    details: VesselDetails;
-  }[] = [
-    {
-      name: "MV ZARAAR HANIF",
-      image: "/assets/images/ship/image_41.jpg",
-      details: {
-        IMO: "9454187",
-        EX_NAME: "NORD TRUST",
-        DWT: "55,693 MT ON 12.573 M DRAFT",
-        TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
-        YEAR_OF_BUILD: "2009 / MITSUI TAMANO, JAPAN.",
-        FLAG: "BANGLADESH/CHATTOGRAM/BV/S2BQ6",
-        DIMENSIONS:
-          "LOA / LBP: 189.990 / 182.0 M BEAM / DEPTH: 32.26 M / 17.90 M",
-        GRT_NRT: "31,232 / 18,516",
-        TPC: "55.8",
-      },
-    },
-    {
-      name: "MV RUBAIYAT HANIF",
-      image: "/assets/images/ship/image_51.jpg",
-      details: {
-        IMO: "9403047",
-        EX_NAME: "NEW VICTORY",
-        DWT: "58,713 MT ON 12.828M SSW",
-        TYPE_OF_VESSEL: "",
-        YEAR_OF_BUILD: "SDBC / 2008",
-        FLAG: "BANGLADESH/NA/BV/S2BZ8",
-        DIMENSIONS: "LOA / BEAM / TPC: 189.99 M / 32.26M / 57.54 MT",
-        GRT_NRT: "32,379/19,353",
-        TPC: "57.54",
-      },
-    },
-    {
-      name: "MV GUL BANO",
-      image: "/assets/images/ship/image_20.jpeg",
-      details: {
-        IMO: "9425899",
-        EX_NAME: "ROYAL SAMURAI",
-        DWT: "58,091 MT ON 12.826 M DRAFT",
-        TYPE_OF_VESSEL: "SINGLE DECK GEARED BULK CARRIER",
-        YEAR_OF_BUILD: "2010 / TSUNEISHI HEAVY INDUSTRIES, PHILIPPINES.",
-        FLAG: "BANGLADESH/CHATTOGRAM/BV/S2CU5",
-        DIMENSIONS:
-          "LOA / LBP: 189.990 / 185.6 M BEAM / DEPTH: 32.26 M / 18.00 M",
-        GRT_NRT: "32,351 / 19,458",
-        TPC: "57.46",
-      },
-    },
-  ];
-
-  const specs = [
-    { name: "IMO", icon: <Info className="w-5 h-5" /> },
-    { name: "EX NAME", icon: <Ship className="w-5 h-5" /> },
-    { name: "DWT", icon: <Scale className="w-5 h-5" /> },
-    { name: "TYPE OF VESSEL", icon: <Ship className="w-5 h-5" /> },
-    { name: "YEAR_OF_BUILD", icon: <Anchor className="w-5 h-5" /> },
-    {
-      name: "FLAG",
-      icon: <Flag className="w-5 h-5" />,
-    },
-    { name: "DIMENSIONS", icon: <Ruler className="w-5 h-5" /> },
-    { name: "GRT/NRT", icon: <Navigation className="w-5 h-5" /> },
-    { name: "TPC", icon: <Scale className="w-5 h-5" /> },
-  ];
+  const activeVessel = vessels[activeTab];
 
   return (
     <div className="w-full py-12 md:py-16 ds-section-light">
       <div className="container mx-auto px-3 sm:px-4">
-        <div className="flex text-center justify-center items-center gap-2 flex-col mb-6 md:mb-8">
-          <Badge className="px-3 py-1 text-sm md:text-base">Our Fleet</Badge>
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-2xl"
-            style={{ color: "#16202B" }}
-          >
-            Explore Our Modern Vessel Fleet
-          </h2>
-          <p
-            className="text-sm md:text-base max-w-2xl"
-            style={{ color: "var(--ds-slate)" }}
-          >
-            Our fleet combines cutting-edge technology with superior
-            craftsmanship for safe and efficient global transportation.
+        <div className="flex flex-col items-center text-center gap-2 mb-6 md:mb-8">
+          <span className="ds-section-kicker">Our Fleet</span>
+          <h2 className="ds-section-title">Modern Vessel Fleet</h2>
+          <p className="text-slate-500 max-w-xl mx-auto text-sm">
+            Safe, reliable, and efficient shipping across our core vessels.
           </p>
         </div>
 
-        {/* Vessel Selection Tabs - More compact and mobile-friendly */}
         <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8">
-          {vessels.map((vessel, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveTab(index)}
-              className={`px-3 py-2 text-sm md:text-base rounded-md shadow-sm transition-all duration-300 flex items-center gap-1 border ${
-                activeTab === index
-                  ? "bg-[#1EAEDB] text-[#FFFFFF] border-[#1EAEDB]"
-                  : "bg-white hover:bg-gray-100 text-[#334155] border-[#E6E8EA]"
-              }`}
-            >
-              <Ship
-                className={`w-4 h-4 ${
-                  activeTab === index ? "text-[#FFFFFF]" : "text-[#1EAEDB]"
+          {vessels.map((vessel, index) => {
+            const isActive = activeTab === index;
+
+            return (
+              <button
+                key={vessel.name}
+                onClick={() => setActiveTab(index)}
+                className={`px-3.5 py-2 text-xs sm:text-sm rounded-full transition-all duration-200 flex items-center gap-2 border ${
+                  isActive
+                    ? "bg-[#0ea5e9] text-white border-[#0ea5e9] shadow-lg shadow-sky-500/10 font-semibold"
+                    : "bg-white hover:bg-slate-50 text-slate-700 border-slate-200 font-medium"
                 }`}
-              />
-              <span className="font-medium">
-                {vessel.name.replace("MV ", "")}
-              </span>
-            </button>
-          ))}
+              >
+                <Ship
+                  className={`w-4 h-4 ${
+                    isActive ? "text-white" : "text-[#0ea5e9]"
+                  }`}
+                />
+                <span>{vessel.name.replace("MV ", "")}</span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Main Content - More compact with smaller gaps */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
-          {/* Vessel Image - Optimized for mobile */}
-          <div
-            className="lg:col-span-5 rounded-lg overflow-hidden shadow bg-white p-2 md:p-3"
-            style={{ border: "1px solid #E6E8EA" }}
-          >
-            <div className="relative h-[200px] sm:h-[250px] md:h-[300px] rounded overflow-hidden shadow-inner">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
+          <div className="lg:col-span-4 rounded-2xl overflow-hidden shadow-sm bg-white p-2.5 border border-slate-100">
+            <div className="relative h-[220px] sm:h-[260px] rounded-xl overflow-hidden shadow-inner">
               <Image
-                src={vessels[activeTab].image}
-                alt={vessels[activeTab].name}
+                src={activeVessel.image}
+                alt={activeVessel.name}
                 fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 md:p-4">
-                <h3 className="text-white text-lg md:text-xl font-bold">
-                  {vessels[activeTab].name}
+              <div
+                className="position-absolute bottom-0 start-0 end-0 p-3"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.82) 100%)",
+                }}
+              >
+                <h3 className="text-white text-base md:text-lg font-bold mb-0">
+                  {activeVessel.name}
                 </h3>
-                {/* <p className="text-white/80 text-sm">Supramax Bulk Carrier</p> */}
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 mt-3">
+            <div className="grid grid-cols-3 gap-2.5 mt-3">
               <div
-                className="p-2 md:p-3 rounded text-center"
-                style={{ backgroundColor: "#F5F5F5" }}
+                className="p-2.5 rounded-xl text-center border border-slate-100"
+                style={{ backgroundColor: "#f8fafc" }}
               >
-                <p
-                  className="text-xs md:text-sm font-medium"
-                  style={{ color: "#848E9C" }}
-                >
+                <p className="text-[10px] font-semibold text-slate-400 uppercase mb-1">
                   DWT
                 </p>
-                <p
-                  className="text-sm md:text-base font-bold"
-                  style={{ color: "#1E2026" }}
-                >
-                  {vessels[activeTab].details.DWT.split(" ")[0]}
+                <p className="text-sm font-bold text-slate-800 mb-0 leading-tight">
+                  {activeVessel.details.DWT.split(" ")[0]}
                 </p>
               </div>
               <div
-                className="p-2 md:p-3 rounded text-center"
-                style={{ backgroundColor: "#F5F5F5" }}
+                className="p-2.5 rounded-xl text-center border border-slate-100"
+                style={{ backgroundColor: "#f8fafc" }}
               >
-                <p
-                  className="text-xs md:text-sm font-medium"
-                  style={{ color: "#848E9C" }}
-                >
+                <p className="text-[10px] font-semibold text-slate-400 uppercase mb-1">
                   Built
                 </p>
-                <p
-                  className="text-sm md:text-base font-bold"
-                  style={{ color: "#1E2026" }}
-                >
-                  {vessels[activeTab].details.YEAR_OF_BUILD.split(" ")[0]}
+                <p className="text-sm font-bold text-slate-800 mb-0 leading-tight">
+                  {activeVessel.details.YEAR_OF_BUILD}
                 </p>
               </div>
               <div
-                className="p-2 md:p-3 rounded text-center"
-                style={{ backgroundColor: "#F5F5F5" }}
+                className="p-2.5 rounded-xl text-center border border-slate-100"
+                style={{ backgroundColor: "#f8fafc" }}
               >
-                <p
-                  className="text-xs md:text-sm font-medium"
-                  style={{ color: "#848E9C" }}
-                >
+                <p className="text-[10px] font-semibold text-slate-400 uppercase mb-1">
                   IMO
                 </p>
-                <p
-                  className="text-sm md:text-base font-bold"
-                  style={{ color: "#1E2026" }}
-                >
-                  {vessels[activeTab].details.IMO}
+                <p className="text-sm font-bold text-slate-800 mb-0 leading-tight">
+                  {activeVessel.details.IMO}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Vessel Specifications - More compact for all screens */}
-          <div className="lg:col-span-7">
-            <div
-              className="bg-white rounded-lg shadow overflow-hidden"
-              style={{ border: "1px solid #E6E8EA" }}
-            >
+          <div className="lg:col-span-8">
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-100">
               <div
-                className="p-3"
-                style={{ backgroundColor: "#222126", color: "#FFFFFF" }}
+                className="px-4 py-3"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #090e17 0%, #0e1b2e 100%)",
+                  color: "#FFFFFF",
+                }}
               >
-                <h3 className="text-base md:text-lg font-bold">
-                  Vessel Specifications
+                <h3 className="text-sm md:text-lg font-bold mb-0 text-white">
+                  VESSEL SPECS
                 </h3>
-                <p className="text-xs md:text-sm" style={{ color: "#848E9C" }}>
-                  Detailed technical information
-                </p>
               </div>
 
-              <div className="divide-y divide-gray-100">
-                {specs.map((spec, idx) => (
-                  <div
-                    key={idx}
-                    className="p-2 md:p-3 hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="p-1.5 rounded-full hidden sm:block"
-                        style={{ backgroundColor: "#F5F5F5", color: "#1EAEDB" }}
-                      >
-                        {spec.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h4
-                          className="text-xs md:text-sm font-medium"
-                          style={{ color: "#66758B" }}
+              <div className="p-3 md:p-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {specs.map((spec) => (
+                    <div
+                      key={spec.key}
+                      className="rounded-xl border border-slate-100 bg-slate-50/70 hover:bg-slate-50 transition-colors duration-200 p-3"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className="p-2 rounded-lg hidden sm:block shrink-0"
+                          style={{
+                            backgroundColor: "#f0f9ff",
+                            color: "#0ea5e9",
+                          }}
                         >
-                          {spec.name}
-                        </h4>
-                        <p
-                          className="text-sm md:text-base font-semibold break-words"
-                          style={{ marginBottom: "0px" }}
-                        >
-                          {vessels[activeTab].details[
-                            spec.name.replace(/\/| /g, "_") as VesselDetailKey
-                          ] || "-"}
-                        </p>
+                          {spec.icon}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase mb-1 tracking-wider">
+                            {spec.label}
+                          </h4>
+                          <p className="text-sm sm:text-[15px] font-semibold text-slate-700 mb-0 break-words leading-snug">
+                            {activeVessel.details[spec.key] || "-"}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

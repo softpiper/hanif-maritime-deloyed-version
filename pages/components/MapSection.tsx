@@ -11,7 +11,7 @@ export default function MapSection() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
         <div className="text-center md:w-1/2 md:pr-8">
           <p className="font-bold text-2xl md:text-4xl dark:text-white text-black">
-            Wanna Rent a{" "}
+            Want to hire a{" "}
             <span className="text-neutral-400">
               {"Vessel".split("").map((word, idx) => (
                 <motion.span

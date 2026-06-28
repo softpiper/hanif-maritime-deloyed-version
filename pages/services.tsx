@@ -2,24 +2,35 @@ import Link from "next/link";
 import React from "react";
 import Wrapper from "./components/layout/Wrapper";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const index = () => {
   return (
     <Wrapper>
-      <section className="ds-section-dark ds-hero">
-        <div className="container">
+      <section className="ds-section-dark position-relative overflow-hidden ds-hero">
+        <div className="container position-relative" style={{ zIndex: 1 }}>
           <div className="text-white text-center">
-            <h3 className="ds-hero-title text-white">Services</h3>
-            <p
-              className="ds-hero-subtitle"
-              style={{ color: "var(--ds-slate)" }}
+            <motion.h2
+              className="ds-hero-title text-white mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              SERVICES
+            </motion.h2>
+            <motion.p
+              className="ds-hero-subtitle mx-auto"
+              style={{ maxWidth: "700px", color: "var(--ds-slate)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               Hanif Maritime Ltd aims to expand its fleet with next-generation
               eco-friendly vessels and explore new markets to enhance our
               service offerings. We are committed to leveraging technological
               advancements to improve operational efficiency and environmental
               performance.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -57,27 +68,37 @@ const index = () => {
 
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Iron Ore</p>
+                        <p className="heading-font fw-bold small">Coal</p>
                       </div>
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Grain</p>
+                        <p className="heading-font fw-bold small">Limestone</p>
                       </div>
-                      {/* <div className="ps-3 position-relative">
+                      <div className="ps-3 position-relative">
+                        <span className="square-primary"></span>
+                        <p className="heading-font fw-bold small">Dolomite</p>
+                      </div>
+                      <div className="ps-3 position-relative">
+                        <span className="square-primary"></span>
+                        <p className="heading-font fw-bold small">Slag</p>
+                      </div>
+                      <div className="ps-3 position-relative">
+                        <span className="square-primary"></span>
+                        <p className="heading-font fw-bold small">Gypsum</p>
+                      </div>
+                      <div className="ps-3 position-relative">
+                        <span className="square-primary"></span>
+                        <p className="heading-font fw-bold small">
+                          Steel cargo
+                        </p>
+                      </div>
+                      <div className="ps-3 position-relative">
+                        <span className="square-primary"></span>
+                        <p className="heading-font fw-bold small">Chrome ore</p>
+                      </div>
+                      <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
                         <p className="heading-font fw-bold small">Alumina</p>
-                      </div> */}
-                      <div className="ps-3 position-relative">
-                        <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Agreegates</p>
-                      </div>
-                      <div className="ps-3 position-relative">
-                        <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Cement</p>
-                      </div>
-                      <div className="ps-3 position-relative">
-                        <span className="square-primary"></span>
-                        <p className="heading-font fw-bold small">Fertilizer</p>
                       </div>
                     </div>
                   </div>
@@ -168,14 +189,15 @@ const index = () => {
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
                         <p className="heading-font fw-bold small">
-                          Bareboat Charter: Proving vessel for time bad charter
+                          Bareboat Charter: Offering vessel for bareboat charter
+                          for having greater control.
                         </p>
                       </div>
                       <div className="ps-3 position-relative">
                         <span className="square-primary"></span>
                         <p className="heading-font fw-bold small">
                           COA (Contract of Affreightment): Long-term agreements
-                          for regular transport of bulk cities, ensuring
+                          for regular transport of bulk commodities, ensuring
                           reliable and predictable shipping solutions.
                         </p>
                       </div>
