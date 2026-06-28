@@ -288,7 +288,7 @@ export default function Home() {
                 </h2>
                 <p className="text-slate-500 max-w-xl mx-auto text-sm md:text-base">
                   Delivering reliable, safe, and efficient cargo shipping
-                  solutions across the world's oceans with professional
+                  solutions across the world&apos;s oceans with professional
                   commercial and technical management.
                 </p>
               </div>
