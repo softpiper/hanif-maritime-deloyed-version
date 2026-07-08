@@ -13,9 +13,10 @@ const Footer = () => {
       }}
     >
       <div className="container">
-        <div className="row g-4">
+        <div className="row g-4 align-items-start">
           <div className="col-lg-6 col-12">
             <p
+              className="mb-0"
               style={{
                 color: "#EAF3F9",
                 fontWeight: 500,
@@ -30,14 +31,14 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-lg-2 col-6">
-            <div className="footer-links">
+            <div className="footer-links text-start">
               <h6
                 className="mb-3 fw-semibold text-white text-uppercase small"
                 style={{ fontSize: "12px", letterSpacing: "0.14em" }}
               >
                 USEFUL LINKS
               </h6>
-              <ul className="list-unstyled d-grid gap-1">
+              <ul className="list-unstyled m-0 d-grid gap-2">
                 {[
                   { href: "/company", label: "Company" },
                   { href: "/services", label: "Services" },
@@ -47,7 +48,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       href={link.href}
-                      className="text-decoration-none d-flex gap-2 align-items-start"
+                      className="text-decoration-none d-flex gap-2 align-items-center"
                       style={{ color: "#b7c8d8" }}
                     >
                       <i
@@ -68,52 +69,55 @@ const Footer = () => {
             >
               GET IN TOUCH
             </h6>
-            <ul className="list-unstyled ps-0 d-grid gap-2">
-              <li>
+            <ul className="list-unstyled m-0 d-grid gap-3">
+              <li className="d-flex align-items-start gap-2">
                 <i
-                  className="fa-solid fa-location-dot"
+                  className="fa-solid fa-location-dot mt-1 flex-shrink-0"
                   style={{ color: "#1EAEDB" }}
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                    color: "#FFFFFF",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                  }}
-                >
-                  Head Office:{" "}
-                </span>
-                <br />
-                <span style={{ marginLeft: "10px", fontSize: "14px" }}>
-                  House # 86,Level # 3 Road # 14, Block # B, Banani, Dhaka-1213
-                </span>
+                <div>
+                  <div
+                    style={{
+                      color: "#FFFFFF",
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Head Office:
+                  </div>
+                  <div style={{ fontSize: "14px", lineHeight: 1.6 }}>
+                    House # 86, Level # 3 Road # 14, Block # B, Banani,
+                    Dhaka-1213
+                  </div>
+                </div>
               </li>
-              <li>
+              <li className="d-flex align-items-start gap-2">
                 <i
-                  className="fa-solid fa-location-dot"
+                  className="fa-solid fa-location-dot mt-1 flex-shrink-0"
                   style={{ color: "#1EAEDB" }}
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                    color: "#FFFFFF",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                  }}
-                >
-                  Corporate Office:{" "}
-                </span>
-                <br />
-                <span style={{ marginLeft: "10px", fontSize: "14px" }}>
-                  73/1, Hrishikesh Das road, Narinda, Dholaikhal, Dhaka-1100
-                </span>
+                <div>
+                  <div
+                    style={{
+                      color: "#FFFFFF",
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Corporate Office:
+                  </div>
+                  <div style={{ fontSize: "14px", lineHeight: 1.6 }}>
+                    73/1, Hrishikesh Das Road, Narinda, Dholaikhal, Dhaka-1100
+                  </div>
+                </div>
               </li>
 
               <li>
                 <a
                   href="tel:880255033662"
-                  className="text-decoration-none d-flex gap-2"
+                  className="text-decoration-none d-flex gap-2 align-items-center"
                   style={{ color: "#b7c8d8" }}
                 >
                   <i
@@ -127,7 +131,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:chartering.hml@hanif-group.com"
-                  className="text-decoration-none d-flex gap-2"
+                  className="text-decoration-none d-flex gap-2 align-items-center"
                   style={{ color: "#b7c8d8" }}
                 >
                   <i
@@ -143,8 +147,8 @@ const Footer = () => {
       </div>
       <div className="copyright" style={{ backgroundColor: "#102131" }}>
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center flex-wrap py-4">
-            <p className="mb-lg-0" style={{ color: "#b7c8d8", fontSize: "12px" }}>
+          <div className="d-flex justify-content-center align-items-center flex-wrap py-4 text-center">
+            <p className="mb-0" style={{ color: "#b7c8d8", fontSize: "12px" }}>
               © {new Date().getFullYear()} Hanif Maritime Limited. All Rights
               Reserved
             </p>
