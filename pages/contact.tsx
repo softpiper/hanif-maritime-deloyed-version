@@ -25,57 +25,66 @@ const contact = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              <div className="ds-card p-4">
+              <div className="ds-card p-4 text-start">
                 <h1 className="fw-bold fs-2 mb-4">Get in Touch</h1>
-                <ul className="list-unstyled ps-0 d-grid gap-2">
-                  <li>
+                <ul className="list-unstyled m-0 d-grid gap-3">
+                  <li className="d-flex align-items-start gap-3">
                     <i
-                      className="fa-solid fa-location-dot"
+                      className="fa-solid fa-location-dot mt-1 flex-shrink-0"
                       style={{ color: "#1EAEDB" }}
                     />
-                    <span
-                      style={{
-                        marginLeft: "10px",
-                        color: "#16202B",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Head Office:{" "}
-                    </span>
-                    <br />
-                    <span
-                      style={{ marginLeft: "10px", color: "var(--ds-slate)" }}
-                    >
-                      House # 86,Level # 3 Road # 14, Block # B, Banani,
-                      Dhaka-1213
-                    </span>
+                    <div>
+                      <div
+                        style={{
+                          color: "#16202B",
+                          fontWeight: 600,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        Head Office:
+                      </div>
+                      <div
+                        style={{
+                          color: "var(--ds-slate)",
+                          lineHeight: 1.65,
+                        }}
+                      >
+                        House # 86, Level # 3 Road # 14, Block # B, Banani,
+                        Dhaka-1213
+                      </div>
+                    </div>
                   </li>
-                  <li>
+                  <li className="d-flex align-items-start gap-3">
                     <i
-                      className="fa-solid fa-location-dot"
+                      className="fa-solid fa-location-dot mt-1 flex-shrink-0"
                       style={{ color: "#1EAEDB" }}
                     />
-                    <span
-                      style={{
-                        marginLeft: "10px",
-                        color: "#16202B",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Corporate Office:{" "}
-                    </span>
-                    <br />
-                    <span
-                      style={{ marginLeft: "10px", color: "var(--ds-slate)" }}
-                    >
-                      73/1, Hrishikesh Das road, Narinda, Dholaikhal, Dhaka-1100
-                    </span>
+                    <div>
+                      <div
+                        style={{
+                          color: "#16202B",
+                          fontWeight: 600,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        Corporate Office:
+                      </div>
+                      <div
+                        style={{
+                          color: "var(--ds-slate)",
+                          lineHeight: 1.65,
+                        }}
+                      >
+                        73/1, Hrishikesh Das Road, Narinda, Dholaikhal,
+                        Dhaka-1100
+                      </div>
+                    </div>
                   </li>
 
                   <li>
                     <a
                       href="tel:880255033662"
-                      className="text-decoration-none d-flex gap-2"
+                      className="text-decoration-none d-flex gap-2 align-items-center"
                       style={{ color: "#334155" }}
                     >
                       <i
@@ -88,7 +97,7 @@ const contact = () => {
                   <li>
                     <a
                       href="mailto:chartering.hml@hanif-group.com"
-                      className="text-decoration-none d-flex gap-2"
+                      className="text-decoration-none d-flex gap-2 align-items-center"
                       style={{ color: "#334155" }}
                     >
                       <i
@@ -122,7 +131,7 @@ const contact = () => {
                       aria-controls="nav-home"
                       aria-selected="true"
                     >
-                      <span>Registered Office</span>
+                      <span>Head Office</span>
                     </button>
 
                     <button
