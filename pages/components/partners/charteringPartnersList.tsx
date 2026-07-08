@@ -127,6 +127,51 @@ export default function CharteringPartnersList() {
       logoUrl: "/assets/images/partners/EVERHLORY-LOGO-WHITE-LOGO.png",
       siteUrl: "https://old.everglory.ae/",
     },
+    {
+      title: "FORTUNE BULK SHIPPING LIMITED",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "HARMONY BULKER DMCC",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "MIDSTAR SHIPPING FZE, U.A.E",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "CENTURY SCOPE GROUP PTE.LTD.",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "ELDER TRIUMPHANT SHIPPING LINES PTE LIMITED",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "SEAPOL SHIPPING FZCO",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "INMAR SHIPPING AND LOGISTICS FZCO",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "AVENIR MARITIME - FZCO",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
+    {
+      title: "GLOBE OCEAN SHIPPING PTE.LTD.",
+      logoUrl: "/assets/images/partners/ship-icon-sample.png",
+      siteUrl: "/partners",
+    },
   ];
 
   return (
