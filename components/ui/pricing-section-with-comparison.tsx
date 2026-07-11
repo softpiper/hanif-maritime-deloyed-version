@@ -61,7 +61,7 @@ const vessels: {
   },
   {
     name: "MV GUL BANO",
-    image: "/assets/images/ship/image_20.jpeg",
+    image: "/assets/images/ship/gulbano/image_91.jpeg",
     details: {
       IMO: "9425899",
       EX_NAME: "ROYAL SAMURAI",
