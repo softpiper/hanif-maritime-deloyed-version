@@ -1,49 +1,40 @@
-import React from "react";
-import Wrapper from "./components/layout/Wrapper";
+import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
+import {
+  Anchor,
+  ArrowRight,
+  BadgeCheck,
+  Clock3,
+  Compass,
+  Globe2,
+  ShieldCheck,
+  Ship,
+  Users,
+  Waves,
+} from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import Wrapper from "./components/layout/Wrapper";
 
 const accent = "#1EAEDB";
 
-const chipStyle = {
-  border: "1px solid rgba(14, 165, 233, 0.18)",
-  background: "rgba(14, 165, 233, 0.06)",
-  color: "#243447",
-  borderRadius: "999px",
-  fontSize: "13px",
-  padding: "0.65rem 0.9rem",
-  lineHeight: 1.25,
-};
-
-const dotStyle = {
-  width: "8px",
-  height: "8px",
-  borderRadius: "999px",
-  background: accent,
-  marginTop: "0.55rem",
-  flexShrink: 0,
-};
-
-const sectionImageStyle = {
-  position: "relative" as const,
-  height: "220px",
-  overflow: "hidden",
-};
-
-const imageBadgeStyle = {
-  position: "absolute" as const,
-  top: "16px",
-  left: "16px",
-  zIndex: 2,
-  background: "rgba(15, 23, 42, 0.72)",
-  color: "#fff",
-  border: "1px solid rgba(255,255,255,0.12)",
-  borderRadius: "999px",
-  padding: "0.4rem 0.75rem",
-  fontSize: "12px",
-  fontWeight: 700,
-  letterSpacing: "0.12em",
-};
+const heroStats = [
+  {
+    value: "15+",
+    label: "Dry bulk cargo categories handled",
+  },
+  {
+    value: "4",
+    label: "Charter structures tailored to cargo strategy",
+  },
+  {
+    value: "24/7",
+    label: "Commercial coordination and voyage support",
+  },
+];
 
 const commodities = [
   "Iron ore",
@@ -63,321 +54,751 @@ const commodities = [
   "Alumina",
 ];
 
-const fleetManagementPoints = [
-  "Technical Management",
-  "Crew Management",
-  "Safety and Compliance",
+type ServicePillar = {
+  id: string;
+  title: string;
+  label: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  icon: LucideIcon;
+  points: string[];
+  note: string;
+};
+
+const servicePillars: ServicePillar[] = [
+  {
+    id: "01",
+    title: "Transportation of Dry Bulk Commodities",
+    label: "Core Cargo",
+    description:
+      "We move essential raw materials with dependable scheduling, disciplined cargo handling, and a commercial focus on predictable execution.",
+    image: "/assets/images/ship/image_1.jpeg",
+    imageAlt: "Dry bulk vessel loading operations",
+    icon: Waves,
+    points: [
+      "Reliable movement of industrial and agricultural cargoes",
+      "Disciplined vessel planning for turnaround efficiency",
+      "Structured communication from nomination to discharge",
+    ],
+    note: "Built for high-volume cargo programs and repeat trade flows.",
+  },
+  {
+    id: "02",
+    title: "Chartering Services",
+    label: "Commercial Desk",
+    description:
+      "Our chartering team structures flexible freight solutions for spot cargoes, dedicated tonnage, and long-term shipping programs.",
+    image: "/assets/images/ship/image_4.jpeg",
+    imageAlt: "Commercial shipping vessel at sea",
+    icon: Compass,
+    points: [
+      "Voyage, time charter, bareboat, and COA solutions",
+      "Competitive market coverage with responsive fixture support",
+      "Single commercial interface throughout execution",
+    ],
+    note: "Designed to match freight exposure, volume needs, and trading flexibility.",
+  },
+  {
+    id: "03",
+    title: "Fleet Management",
+    label: "Vessel Oversight",
+    description:
+      "Technical, crew, and safety management services keep vessels operating efficiently, compliantly, and with reduced operational friction.",
+    image: "/assets/images/ship/image_2.jpeg",
+    imageAlt: "Managed dry bulk vessel in transit",
+    icon: ShieldCheck,
+    points: [
+      "Technical management with maintenance discipline",
+      "Crew coordination backed by operational standards",
+      "Safety oversight aligned with compliance requirements",
+    ],
+    note: "Focused on reliability, risk control, and consistent vessel readiness.",
+  },
+  {
+    id: "04",
+    title: "Consulting Services",
+    label: "Advisory Support",
+    description:
+      "We provide practical guidance for commercial decisions, operating improvements, and regulatory navigation across shipping and logistics.",
+    image: "/assets/images/ship/image_5.jpeg",
+    imageAlt: "Maritime consulting and vessel operations support",
+    icon: Users,
+    points: [
+      "Operational efficiency review and practical recommendations",
+      "Market analysis for shipping decisions and cargo planning",
+      "Regulatory awareness for lower execution risk",
+    ],
+    note: "Useful when shipping decisions need commercial context, not just freight quotes.",
+  },
 ];
 
-const consultingPoints = [
-  "Operational Efficiency",
-  "Market Analysis",
-  "Regulatory Compliance",
+const charteringServices = [
+  {
+    title: "Voyage Charter",
+    summary:
+      "Reliable single-voyage and spot-shipment solutions that balance freight economics, speed, and operational control.",
+    gains: [
+      "Fast freight quotations",
+      "Competitive market pricing",
+      "Reliable vessel nominations",
+      "Efficient port operations",
+    ],
+  },
+  {
+    title: "Time Charter",
+    summary:
+      "Dedicated vessel capacity for customers who need flexible trading without the burden of vessel ownership.",
+    gains: [
+      "Guaranteed vessel availability",
+      "Flexible worldwide trading",
+      "Expert technical management",
+      "Reduced operational risk",
+    ],
+  },
+  {
+    title: "Bareboat Charter",
+    summary:
+      "Longer-term access to quality dry bulk tonnage for operators who want fleet growth with operational control.",
+    gains: [
+      "Long-term fleet solutions",
+      "Commercial flexibility",
+      "Well-maintained vessels",
+      "Tailored charter structures",
+    ],
+  },
+  {
+    title: "Contract of Affreightment",
+    summary:
+      "Structured shipping programs for producers, traders, and industrial customers moving recurring cargo volumes.",
+    gains: [
+      "Assured transport capacity",
+      "Predictable logistics costs",
+      "Flexible vessel scheduling",
+      "Reduced market exposure",
+    ],
+  },
 ];
 
-const index = () => {
-  const charteringServices = [
-    {
-      title: "Voyage Charter",
-      tagline: "Move Your Cargo with Confidence",
-      summary:
-        "Whether it's a single shipment or a spot cargo opportunity, we deliver reliable voyage solutions that balance cost, speed, and operational excellence.",
-      gains: [
-        "Fast freight quotations",
-        "Competitive market pricing",
-        "Reliable vessel nominations",
-        "Efficient port operations",
-        "Real-time voyage updates",
-        "Dedicated commercial support from fixture to completion",
-      ],
-    },
-    {
-      title: "Time Charter",
-      tagline: "Reliable Tonnage. Maximum Flexibility.",
-      summary:
-        "Secure dedicated vessel capacity without the burden of vessel ownership. Our time charter solutions allow you to focus on your trading while we ensure safe and efficient vessel management.",
-      gains: [
-        "Guaranteed vessel availability",
-        "Flexible worldwide trading (within agreed limits)",
-        "Expert technical management",
-        "High fleet reliability",
-        "Reduced operational risk",
-        "Single point of contact throughout the charter period",
-      ],
-    },
-    {
-      title: "Bareboat Charter",
-      tagline: "Expand Your Fleet Without Buying a Vessel",
-      summary:
-        "Our bareboat charter service offers long-term access to quality dry bulk vessels, enabling operators to grow their business with complete operational control.",
-      gains: [
-        "Long-term fleet solutions",
-        "Commercial flexibility",
-        "Well-maintained vessels",
-        "Cost-effective alternative to ownership",
-        "Trusted owner partnership",
-        "Tailored charter structures",
-      ],
-    },
-    {
-      title: "Contract of Affreightment (COA)",
-      tagline: "Long-Term Shipping Solutions for Your Supply Chain",
-      summary:
-        "We help cargo producers, traders, and industrial customers move large cargo volumes through customized transportation programs designed for reliability and efficiency.",
-      gains: [
-        "Assured transport capacity",
-        "Predictable logistics costs",
-        "Flexible vessel scheduling",
-        "Reduced market exposure",
-        "Dedicated account management",
-        "Long-term strategic partnership",
-      ],
-    },
-  ];
+const operatingModel = [
+  {
+    step: "01",
+    title: "Cargo Review",
+    text: "We assess cargo type, timing, route profile, and operational constraints before proposing a structure.",
+    icon: Anchor,
+  },
+  {
+    step: "02",
+    title: "Freight Structuring",
+    text: "We match the requirement to the right charter model, vessel profile, and commercial risk balance.",
+    icon: Ship,
+  },
+  {
+    step: "03",
+    title: "Execution Control",
+    text: "Fixture follow-up, nomination, voyage coordination, and communication stay centralized through one team.",
+    icon: Clock3,
+  },
+  {
+    step: "04",
+    title: "Performance Focus",
+    text: "We stay focused on safe operations, on-time delivery, and long-term commercial continuity.",
+    icon: BadgeCheck,
+  },
+];
 
-  const partnerPoints = [
-    "Commercial flexibility",
-    "Safe and compliant operations",
-    "Transparent communication",
-    "On-time performance",
-    "Global market expertise",
-    "Long-term partnerships built on trust",
-  ];
+const partnerPoints = [
+  "Commercial flexibility",
+  "Safe and compliant operations",
+  "Transparent communication",
+  "On-time performance",
+  "Global market expertise",
+  "Long-term partnerships built on trust",
+];
 
+const chipStyle = {
+  border: "1px solid rgba(14, 165, 233, 0.16)",
+  background: "rgba(14, 165, 233, 0.06)",
+  color: "#243447",
+  borderRadius: "999px",
+  fontSize: "13px",
+  padding: "0.65rem 0.9rem",
+  lineHeight: 1.25,
+};
+
+const heroMetricCardStyle = {
+  background: "rgba(255, 255, 255, 0.07)",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  borderRadius: "18px",
+  backdropFilter: "blur(10px)",
+};
+
+const ServicesPage = () => {
   return (
     <Wrapper>
+      <Head>
+        <title>Services | Hanif Maritime Limited</title>
+      </Head>
+
       <section className="ds-section-dark position-relative overflow-hidden ds-hero">
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100 opacity-25"
+          style={{
+            background:
+              "radial-gradient(circle at top left, rgba(30,174,219,0.2), transparent 30%), radial-gradient(circle at bottom right, rgba(125,211,252,0.14), transparent 34%)",
+          }}
+        />
+        <div className="position-absolute top-0 start-0 w-100 h-100 opacity-5 pointer-events-none">
+          <div
+            className="w-100 h-100"
+            style={{
+              backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}
+          />
+        </div>
+
         <div className="container position-relative" style={{ zIndex: 1 }}>
-          <div className="text-white text-center">
-            <motion.h2
-              className="ds-hero-title text-white mb-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              SERVICES
-            </motion.h2>
-            <motion.p
-              className="ds-hero-subtitle mx-auto"
-              style={{ maxWidth: "700px", color: "var(--ds-slate)" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              Hanif Maritime Ltd aims to expand its fleet with next-generation
-              eco-friendly vessels and explore new markets to enhance our
-              service offerings. We are committed to leveraging technological
-              advancements to improve operational efficiency and environmental
-              performance.
-            </motion.p>
+          <div className="row align-items-center gy-5">
+            <div className="col-lg-6">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill border border-sky-400/25 bg-sky-400/10 text-sky-300 text-uppercase fw-semibold mb-4">
+                  <span
+                    className="rounded-circle"
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      background: "#7dd3fc",
+                    }}
+                  />
+                  Service Portfolio
+                </div>
+
+                <h1 className="ds-hero-title mb-4">
+                  Dry bulk shipping services with stronger commercial control
+                </h1>
+
+                <p className="ds-hero-subtitle mb-4" style={{ maxWidth: "640px" }}>
+                  Hanif Maritime Limited structures freight, vessel, and
+                  advisory solutions around cargo reality. The focus is simple:
+                  dependable execution, flexible chartering, and responsive
+                  support from planning through delivery.
+                </p>
+
+                <div className="d-flex flex-wrap gap-3 mb-4">
+                  <Button asChild className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-0">
+                    <Link href="/contact">
+                      Discuss a requirement
+                      <ArrowRight size={16} className="ms-2" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-white/20 bg-white/5 text-white hover:bg-white hover:text-slate-900"
+                  >
+                    <Link href="/fleet">View our fleet</Link>
+                  </Button>
+                </div>
+
+                <div className="row g-3">
+                  {heroStats.map((stat) => (
+                    <div className="col-sm-4" key={stat.label}>
+                      <div className="h-100 p-3 p-lg-4" style={heroMetricCardStyle}>
+                        <div
+                          className="fw-bold text-white mb-2"
+                          style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+                        >
+                          {stat.value}
+                        </div>
+                        <p
+                          className="mb-0"
+                          style={{
+                            color: "rgba(226, 232, 240, 0.8)",
+                            lineHeight: 1.6,
+                            fontSize: "14px",
+                          }}
+                        >
+                          {stat.label}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="col-lg-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97, y: 18 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.75, delay: 0.1 }}
+                className="position-relative"
+              >
+                <div
+                  className="position-absolute"
+                  style={{
+                    inset: "8% auto auto 8%",
+                    width: "220px",
+                    height: "220px",
+                    borderRadius: "999px",
+                    background: "rgba(14, 165, 233, 0.16)",
+                    filter: "blur(50px)",
+                  }}
+                />
+
+                <div
+                  className="ds-card-dark p-2 position-relative overflow-hidden"
+                  style={{ borderRadius: "28px" }}
+                >
+                  <div
+                    className="position-relative overflow-hidden"
+                    style={{ height: "520px", borderRadius: "24px" }}
+                  >
+                    <Image
+                      src="/assets/images/ship/image_4.jpeg"
+                      alt="Hanif Maritime vessel at sea"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 991px) 100vw, 48vw"
+                      priority
+                    />
+                    <div
+                      className="position-absolute top-0 start-0 w-100 h-100"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(5,10,18,0.05) 0%, rgba(5,10,18,0.3) 55%, rgba(5,10,18,0.92) 100%)",
+                      }}
+                    />
+
+                    <div className="position-absolute top-0 start-0 w-100 p-4">
+                      <div className="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                        <div
+                          className="px-3 py-2 rounded-pill"
+                          style={{
+                            background: "rgba(2, 132, 199, 0.24)",
+                            border: "1px solid rgba(125, 211, 252, 0.3)",
+                            color: "#e0f2fe",
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            letterSpacing: "0.12em",
+                          }}
+                        >
+                          COMMERCIAL + OPERATIONAL
+                        </div>
+                        <div
+                          className="px-3 py-2 rounded-pill"
+                          style={{
+                            background: "rgba(15, 23, 42, 0.45)",
+                            border: "1px solid rgba(255,255,255,0.08)",
+                            color: "#f8fafc",
+                            fontSize: "12px",
+                          }}
+                        >
+                          Global dry bulk focus
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="position-absolute bottom-0 start-0 w-100 p-4 p-lg-5">
+                      <div className="row g-3">
+                        {servicePillars.slice(0, 3).map((pillar) => {
+                          const Icon = pillar.icon;
+
+                          return (
+                            <div className="col-sm-4" key={pillar.id}>
+                              <div
+                                className="h-100 rounded-4 p-3"
+                                style={{
+                                  background: "rgba(255, 255, 255, 0.08)",
+                                  border: "1px solid rgba(255,255,255,0.1)",
+                                  backdropFilter: "blur(10px)",
+                                }}
+                              >
+                                <Icon size={18} color="#7dd3fc" className="mb-3" />
+                                <div className="fw-semibold text-white mb-2">
+                                  {pillar.label}
+                                </div>
+                                <p
+                                  className="mb-0"
+                                  style={{
+                                    color: "rgba(226, 232, 240, 0.82)",
+                                    fontSize: "14px",
+                                    lineHeight: 1.6,
+                                  }}
+                                >
+                                  {pillar.title}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="position-absolute d-none d-xl-flex align-items-center gap-3 px-3 py-3"
+                  style={{
+                    right: "-24px",
+                    bottom: "48px",
+                    background: "#ffffff",
+                    color: "#16202B",
+                    borderRadius: "20px",
+                    boxShadow: "0 18px 36px rgba(15, 23, 42, 0.18)",
+                    width: "240px",
+                  }}
+                >
+                  <div
+                    className="d-inline-flex align-items-center justify-content-center rounded-circle"
+                    style={{
+                      width: "44px",
+                      height: "44px",
+                      background: "rgba(14, 165, 233, 0.12)",
+                      color: accent,
+                    }}
+                  >
+                    <Globe2 size={20} />
+                  </div>
+                  <div>
+                    <div className="fw-semibold">Flexible market coverage</div>
+                    <p className="mb-0 text-secondary small">
+                      Structured freight support across cargo cycles and trading
+                      windows.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="service-section ds-section ds-section-light">
+      <section className="ds-section ds-section-light">
         <div className="container">
-          <div className="ds-section-head text-center">
+          <div className="ds-section-head">
             <p className="ds-section-kicker">What We Do</p>
-            <h2 className="ds-section-title">Service Portfolio</h2>
+            <h2 className="ds-section-title">A service stack built around cargo movement</h2>
             <p
               className="mx-auto mb-0"
               style={{ maxWidth: "760px", color: "var(--bs-secondary-color)" }}
             >
-              We structure our services around the cargo, the vessel, and the
-              commercial outcome. Each service line is designed to be flexible,
-              dependable, and easy to manage.
+              Instead of treating freight, vessel control, and advisory work as
+              separate silos, we connect them into one operating model that is
+              easier for customers to plan around.
             </p>
           </div>
 
-          <div className="row g-4 mt-2 align-items-stretch">
-            <div className="col-lg-5">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55 }}
-                className="ds-card h-100 overflow-hidden"
-              >
-                <div style={sectionImageStyle}>
-                  <Image
-                    fill
-                    src="/assets/images/ship/image_1.jpeg"
-                    className="object-cover"
-                    alt="Transportation of Dry Bulk Commodities"
-                    sizes="(max-width: 991px) 100vw, 40vw"
-                  />
-                  <span style={imageBadgeStyle}>01</span>
-                </div>
-                <div className="p-4 p-xl-4">
-                  <p className="ds-section-kicker mb-2">Core Cargo</p>
-                  <h3 className="h4 mb-3">
-                    Transportation of Dry Bulk Commodities
-                  </h3>
-                  <p className="mb-4 text-secondary" style={{ lineHeight: 1.7 }}>
-                    We move essential raw materials with dependable schedules,
-                    careful cargo handling, and a focus on predictable
-                    execution.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2">
-                    {commodities.map((item) => (
-                      <span key={item} style={chipStyle}>
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+          <div className="row g-4">
+            {servicePillars.map((pillar, index) => {
+              const Icon = pillar.icon;
 
-            <div className="col-lg-7">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55, delay: 0.05 }}
-                className="ds-card h-100 overflow-hidden"
-              >
-                <div style={sectionImageStyle}>
-                  <Image
-                    fill
-                    src="/assets/images/ship/image_4.jpeg"
-                    className="object-cover"
-                    alt="Chartering Services"
-                    sizes="(max-width: 991px) 100vw, 55vw"
-                  />
-                  <span style={imageBadgeStyle}>02</span>
-                </div>
-                <div className="p-4 p-xl-4">
-                  <p className="ds-section-kicker mb-2">Commercial Desk</p>
-                  <h3 className="h4 mb-3">Chartering Services</h3>
-                  <p className="mb-4 text-secondary" style={{ lineHeight: 1.7 }}>
-                    Our chartering team structures flexible solutions for spot
-                    cargoes, long-term capacity, and strategic shipping
-                    programs.
-                  </p>
-
-                  <div className="row g-3">
-                    {charteringServices.map((service) => (
-                      <div className="col-xl-6" key={service.title}>
-                        <div
-                          className="h-100 rounded-4 p-4"
-                          style={{
-                            border: "1px solid rgba(15, 23, 42, 0.08)",
-                            background:
-                              "linear-gradient(180deg, rgba(248,250,252,1) 0%, rgba(255,255,255,1) 100%)",
-                          }}
-                        >
-                          <p
-                            className="text-uppercase small fw-semibold mb-2"
-                            style={{ color: accent, letterSpacing: "0.12em" }}
+              return (
+                <div className="col-lg-6" key={pillar.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.55, delay: index * 0.05 }}
+                    className="ds-card h-100"
+                    style={{ borderRadius: "24px" }}
+                  >
+                    <div className="p-4 p-lg-5 h-100 d-flex flex-column">
+                      <div className="d-flex justify-content-between align-items-start gap-3 mb-4">
+                        <div>
+                          <p className="ds-section-kicker mb-2">{pillar.label}</p>
+                          <h3 className="h4 mb-0">{pillar.title}</h3>
+                        </div>
+                        <div className="d-flex align-items-center gap-2 flex-shrink-0">
+                          <span
+                            className="px-3 py-2 rounded-pill"
+                            style={{
+                              background: "rgba(14, 165, 233, 0.08)",
+                              color: "#0f172a",
+                              border: "1px solid rgba(14, 165, 233, 0.14)",
+                              fontSize: "12px",
+                              fontWeight: 700,
+                              letterSpacing: "0.1em",
+                            }}
                           >
-                            {service.title}
-                          </p>
-                          <h4 className="h6 fw-semibold mb-2">
-                            {service.tagline}
-                          </h4>
-                          <p
-                            className="small text-secondary mb-3"
-                            style={{ lineHeight: 1.65 }}
+                            {pillar.id}
+                          </span>
+                          <span
+                            className="d-inline-flex align-items-center justify-content-center rounded-circle"
+                            style={{
+                              width: "42px",
+                              height: "42px",
+                              background: "rgba(14, 165, 233, 0.1)",
+                              color: accent,
+                              border: "1px solid rgba(14, 165, 233, 0.12)",
+                            }}
                           >
-                            {service.summary}
-                          </p>
-                          <p className="fw-semibold small mb-2">What you gain</p>
-                          <div className="d-flex flex-wrap gap-2">
-                            {service.gains.map((gain) => (
-                              <span key={gain} style={chipStyle}>
-                                {gain}
-                              </span>
-                            ))}
-                          </div>
+                            <Icon size={18} />
+                          </span>
                         </div>
                       </div>
-                    ))}
-                  </div>
+
+                      <p className="text-secondary mb-4" style={{ lineHeight: 1.72 }}>
+                        {pillar.description}
+                      </p>
+
+                      <div className="d-grid gap-3 mb-4">
+                        {pillar.points.map((point) => (
+                          <div className="d-flex align-items-start gap-3" key={point}>
+                            <span
+                              className="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                              style={{
+                                width: "28px",
+                                height: "28px",
+                                background: "rgba(14,165,233,0.1)",
+                                color: accent,
+                              }}
+                            >
+                              <BadgeCheck size={15} />
+                            </span>
+                            <p className="mb-0" style={{ lineHeight: 1.65 }}>
+                              {point}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div
+                        className="mt-auto rounded-4 p-3"
+                        style={{
+                          background: "linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%)",
+                          border: "1px solid rgba(14, 165, 233, 0.12)",
+                        }}
+                      >
+                        <p className="mb-0 small fw-semibold" style={{ color: "#334155", lineHeight: 1.7 }}>
+                          {pillar.note}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </motion.div>
-            </div>
+              );
+            })}
           </div>
 
-          <div className="row g-4 mt-1">
-            <div className="col-lg-6">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55, delay: 0.1 }}
-                className="ds-card h-100 overflow-hidden"
-              >
-                <div style={sectionImageStyle}>
-                  <Image
-                    fill
-                    src="/assets/images/ship/image_2.jpeg"
-                    className="object-cover"
-                    alt="Fleet Management"
-                    sizes="(max-width: 991px) 100vw, 45vw"
-                  />
-                  <span style={imageBadgeStyle}>03</span>
+          <div className="ds-panel mt-4 mt-lg-5">
+            <div className="row g-4 align-items-center">
+              <div className="col-lg-4">
+                <p className="ds-section-kicker mb-2">Cargo Coverage</p>
+                <h3 className="mb-3">Dry bulk cargoes we regularly work with</h3>
+                <p className="ds-text-muted mb-0">
+                  The cargo mix spans raw materials, industrial inputs, and
+                  trading commodities that require reliable vessel access and
+                  disciplined voyage handling.
+                </p>
+              </div>
+              <div className="col-lg-8">
+                <div className="d-flex flex-wrap gap-2">
+                  {commodities.map((item) => (
+                    <span key={item} style={chipStyle}>
+                      {item}
+                    </span>
+                  ))}
                 </div>
-                <div className="p-4">
-                  <p className="ds-section-kicker mb-2">Vessel Oversight</p>
-                  <h3 className="h4 mb-3">Fleet Management</h3>
-                  <p className="mb-4 text-secondary" style={{ lineHeight: 1.7 }}>
-                    Professional technical, crew, and safety management to keep
-                    vessels operating reliably and in full compliance.
-                  </p>
-                  <div className="d-grid gap-3">
-                    {fleetManagementPoints.map((point) => (
-                      <div
-                        key={point}
-                        className="d-flex align-items-start gap-3"
-                      >
-                        <span style={dotStyle} />
-                        <p className="mb-0 fw-semibold">{point}</p>
-                      </div>
-                    ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ds-section pt-0">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="position-relative overflow-hidden rounded-5 p-4 p-lg-5 text-white"
+            style={{
+              background:
+                "linear-gradient(135deg, #0b1725 0%, #12263a 48%, #0f1d2d 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+            }}
+          >
+            <div
+              className="position-absolute top-0 end-0 h-100"
+              style={{
+                width: "42%",
+                background:
+                  "radial-gradient(circle at top right, rgba(30,174,219,0.32), transparent 58%)",
+                pointerEvents: "none",
+              }}
+            />
+
+            <div className="row g-4 align-items-start position-relative">
+              <div className="col-lg-4">
+                <p className="ds-section-kicker text-white mb-2">Chartering Focus</p>
+                <h2 className="ds-section-title text-white mb-3">
+                  Flexible structures for different freight exposures
+                </h2>
+                <p
+                  className="mb-4"
+                  style={{
+                    color: "rgba(234, 243, 249, 0.82)",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  Chartering is not one service. It is a set of commercial
+                  structures that should match volume, timing, ownership
+                  preference, and market risk tolerance.
+                </p>
+
+                <div className="d-flex flex-column gap-3">
+                  <div
+                    className="rounded-4 p-3"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.06)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                    }}
+                  >
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      <Ship size={18} color="#7dd3fc" />
+                      <span className="fw-semibold text-white">
+                        Responsive commercial desk
+                      </span>
+                    </div>
+                    <p className="mb-0 small" style={{ color: "#d8e6f2", lineHeight: 1.7 }}>
+                      Freight advice, vessel options, and fixture follow-up stay
+                      in one lane.
+                    </p>
+                  </div>
+
+                  <div
+                    className="rounded-4 p-3"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.06)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                    }}
+                  >
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      <Globe2 size={18} color="#7dd3fc" />
+                      <span className="fw-semibold text-white">
+                        Coverage for spot and strategic programs
+                      </span>
+                    </div>
+                    <p className="mb-0 small" style={{ color: "#d8e6f2", lineHeight: 1.7 }}>
+                      The structure can scale from a single movement to recurring
+                      cargo commitments.
+                    </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+
+              <div className="col-lg-8">
+                <div className="row g-3">
+                  {charteringServices.map((service) => (
+                    <div className="col-md-6" key={service.title}>
+                      <div
+                        className="h-100 rounded-4 p-4"
+                        style={{
+                          background: "rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          backdropFilter: "blur(10px)",
+                        }}
+                      >
+                        <p
+                          className="text-uppercase small fw-semibold mb-2"
+                          style={{ color: "#7dd3fc", letterSpacing: "0.12em" }}
+                        >
+                          {service.title}
+                        </p>
+                        <p
+                          className="mb-3"
+                          style={{ color: "#e2e8f0", lineHeight: 1.7 }}
+                        >
+                          {service.summary}
+                        </p>
+                        <div className="d-flex flex-wrap gap-2">
+                          {service.gains.map((gain) => (
+                            <span
+                              key={gain}
+                              style={{
+                                ...chipStyle,
+                                color: "#e2e8f0",
+                                background: "rgba(255,255,255,0.08)",
+                                border: "1px solid rgba(255,255,255,0.1)",
+                              }}
+                            >
+                              {gain}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="ds-section ds-section-light pt-0">
+        <div className="container">
+          <div className="row g-4 align-items-start">
+            <div className="col-lg-4">
+              <p className="ds-section-kicker">How We Work</p>
+              <h2 className="ds-section-title">A cleaner execution model for customers</h2>
+              <p className="ds-text-muted mb-0">
+                The design principle is straightforward: simplify freight
+                planning, centralize communication, and reduce avoidable
+                operational noise.
+              </p>
             </div>
 
-            <div className="col-lg-6">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55, delay: 0.15 }}
-                className="ds-card h-100 overflow-hidden"
-              >
-                <div style={sectionImageStyle}>
-                  <Image
-                    fill
-                    src="/assets/images/ship/image_5.jpeg"
-                    className="object-cover"
-                    alt="Consulting Services"
-                    sizes="(max-width: 991px) 100vw, 45vw"
-                  />
-                  <span style={imageBadgeStyle}>04</span>
-                </div>
-                <div className="p-4">
-                  <p className="ds-section-kicker mb-2">Advisory Support</p>
-                  <h3 className="h4 mb-3">Consulting Services</h3>
-                  <p className="mb-4 text-secondary" style={{ lineHeight: 1.7 }}>
-                    Practical advice for commercial, operational, and
-                    regulatory decisions across shipping and logistics.
-                  </p>
-                  <div className="d-grid gap-3">
-                    {consultingPoints.map((point) => (
-                      <div
-                        key={point}
-                        className="d-flex align-items-start gap-3"
+            <div className="col-lg-8">
+              <div className="row g-3">
+                {operatingModel.map((item, index) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div className="col-md-6" key={item.step}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 18 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: index * 0.05 }}
+                        className="ds-card h-100 p-4"
+                        style={{ borderRadius: "22px" }}
                       >
-                        <span style={dotStyle} />
-                        <p className="mb-0 fw-semibold">{point}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+                        <div className="d-flex justify-content-between align-items-start gap-3 mb-4">
+                          <span
+                            className="d-inline-flex align-items-center justify-content-center rounded-circle"
+                            style={{
+                              width: "48px",
+                              height: "48px",
+                              background: "rgba(14, 165, 233, 0.1)",
+                              color: accent,
+                            }}
+                          >
+                            <Icon size={20} />
+                          </span>
+                          <span
+                            className="fw-semibold"
+                            style={{ color: "#94a3b8", letterSpacing: "0.08em" }}
+                          >
+                            {item.step}
+                          </span>
+                        </div>
+                        <h3 className="h5 mb-3">{item.title}</h3>
+                        <p className="mb-0 text-secondary" style={{ lineHeight: 1.72 }}>
+                          {item.text}
+                        </p>
+                      </motion.div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -388,7 +809,7 @@ const index = () => {
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="position-relative overflow-hidden rounded-5 p-4 p-lg-5 text-white"
             style={{
@@ -405,30 +826,32 @@ const index = () => {
                 pointerEvents: "none",
               }}
             />
+
             <div className="row g-4 align-items-center position-relative">
               <div className="col-lg-5">
-                <p className="ds-section-kicker text-white mb-2">
-                  Why Partner With Us?
-                </p>
+                <p className="ds-section-kicker text-white mb-2">Why Partner With Us</p>
                 <h2 className="ds-section-title text-white mb-3">
-                  Dependable shipping solutions backed by experience
+                  Dependable shipping support backed by practical experience
                 </h2>
                 <p
-                  className="mb-0"
+                  className="mb-4"
                   style={{
                     color: "rgba(234, 243, 249, 0.82)",
                     lineHeight: 1.8,
                   }}
                 >
-                  At Hanif Maritime Limited, we don&apos;t simply provide
-                  vessels, we deliver dependable shipping solutions backed by
-                  experience, operational excellence, and responsive customer
-                  service.
+                  At Hanif Maritime Limited, the service promise is not just
+                  vessel availability. It is commercially aware support, steady
+                  communication, and operational discipline customers can plan
+                  around.
                 </p>
+
+                <Button asChild className="bg-white text-slate-900 hover:bg-sky-100">
+                  <Link href="/contact">Start a conversation</Link>
+                </Button>
               </div>
 
               <div className="col-lg-7">
-                <p className="fw-semibold mb-3 text-white">Our commitment includes:</p>
                 <div className="row g-3">
                   {partnerPoints.map((point) => (
                     <div className="col-sm-6" key={point}>
@@ -440,12 +863,16 @@ const index = () => {
                         }}
                       >
                         <span
+                          className="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
                           style={{
-                            ...dotStyle,
-                            marginTop: "0.45rem",
-                            background: "#7dd3fc",
+                            width: "30px",
+                            height: "30px",
+                            background: "rgba(125, 211, 252, 0.16)",
+                            color: "#7dd3fc",
                           }}
-                        />
+                        >
+                          <BadgeCheck size={16} />
+                        </span>
                         <span style={{ lineHeight: 1.65, color: "#EAF3F9" }}>
                           {point}
                         </span>
@@ -462,4 +889,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default ServicesPage;
