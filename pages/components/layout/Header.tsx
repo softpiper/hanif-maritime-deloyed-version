@@ -20,38 +20,31 @@ const Header = () => {
   return (
     <header
       id="navbar_top"
-      className="transparent-header position-fixed"
+      className="hm-site-header transparent-header position-fixed"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.92)",
-        backdropFilter: "blur(14px)",
         boxShadow: "0 8px 30px rgba(15, 42, 63, 0.08)",
         borderBottom: "1px solid #d9e5ef",
         width: "100%",
         top: 0,
         left: 0,
-        zIndex: 999,
+        zIndex: 1060,
       }}
     >
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
-          <Link className=" site-logo navbar-brand" href="/" rel="home">
+        <nav className="navbar navbar-expand-xl navbar-light py-3 py-xl-0">
+          <Link className="hm-site-logo site-logo navbar-brand" href="/" rel="home">
             <Image
-              className="logo-dark"
+              className="hm-logo-image"
               src="/assets/images/logo.png"
-              width={300}
-              height={50}
+              width={260}
+              height={32}
               alt="Hanif Maritime Limited"
-            />
-            <Image
-              className="logo-light"
-              src="/assets/images/logo.png"
-              width={300}
-              height={50}
-              alt="Hanif Maritime Limited"
+              priority
             />
           </Link>
           <button
-            className="navbar-toggler border-0 shadow-none"
+            className="hm-menu-toggle navbar-toggler border-0 shadow-none"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#main_nav"
@@ -61,12 +54,12 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div
-            className="offcanvas offcanvas-lg offcanvas-end p-3 p-lg-0"
+            className="hm-mobile-menu offcanvas offcanvas-xl offcanvas-end p-3 p-xl-0"
             style={{ backgroundColor: "#FFFFFF", width: "300px" }}
             id="main_nav"
             tabIndex={-1}
           >
-            <div className="offcanvas-body align-items-center">
+            <div className="offcanvas-body align-items-xl-center">
               <div className="offcanvas-header px-0 justify-content-end">
                 <button
                   type="button"
@@ -76,9 +69,9 @@ const Header = () => {
                 />
               </div>
 
-              <ul className="navbar-nav ms-lg-auto gap-2 gap-lg-3 align-items-lg-center">
+              <ul className="navbar-nav ms-xl-auto gap-2 gap-xl-3 align-items-xl-center">
                 {navItems.map((item) => (
-                  <li key={item.path} className="nav-item dropdown px-lg-1">
+                  <li key={item.path} className="nav-item dropdown px-xl-1">
                     <Link
                       className={
                         router.pathname === item.path

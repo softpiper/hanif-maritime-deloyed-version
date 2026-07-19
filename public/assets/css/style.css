@@ -14723,4 +14723,116 @@ table.dataTable > thead .sorting_desc:after {
   left: calc(var(--bs-btn-icon-size) / 6);
 }
 
+/* Hanif Maritime responsive header overrides */
+.hm-site-header {
+  z-index: 1060 !important;
+}
+
+.hm-site-header .navbar {
+  min-height: 72px;
+}
+
+.hm-site-logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: calc(100vw - 92px);
+  margin-right: 12px;
+}
+
+.hm-logo-image {
+  display: block !important;
+  width: clamp(170px, 52vw, 260px) !important;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hm-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+}
+
+.hm-mobile-menu {
+  z-index: 1065 !important;
+  max-width: min(86vw, 340px);
+  box-shadow: -18px 0 44px rgba(15, 23, 42, 0.18);
+}
+
+.hm-mobile-menu .offcanvas-body {
+  overflow-y: auto;
+}
+
+@media all and (max-width: 1199.98px) {
+  .hm-site-header .container {
+    max-width: 100%;
+  }
+
+  .hm-site-header .navbar {
+    flex-wrap: nowrap;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .hm-mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: #ffffff !important;
+  }
+
+  .hm-mobile-menu.show,
+  .hm-mobile-menu.showing {
+    visibility: visible !important;
+  }
+
+  .hm-mobile-menu .offcanvas-header {
+    display: flex;
+    flex-shrink: 0;
+    min-height: 48px;
+  }
+
+  .hm-mobile-menu .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch !important;
+    padding-top: 0;
+  }
+
+  .hm-mobile-menu .navbar-nav {
+    width: 100%;
+    gap: 0 !important;
+  }
+
+  .hm-mobile-menu .nav-item {
+    width: 100%;
+  }
+
+  .hm-mobile-menu .nav-link.ds-nav-link {
+    display: block;
+    width: 100%;
+    color: #334155 !important;
+    padding: 12px 4px !important;
+    font-size: 16px;
+    font-variant: normal;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .hm-mobile-menu .nav-link.ds-nav-link::after {
+    display: none;
+  }
+
+  .hm-mobile-menu .ds-nav-cta {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
